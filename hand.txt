@@ -1,28 +1,28 @@
 game:GetService("StarterGui"):SetCore("SendNotification", { 
-	Title = "Teamjohndoe-design";
-	Text = "This script is converted by johndoe join now https://discord.gg/4wGpMHdXYa";
-	Icon = "rbxthumb://type=Asset&id=71967665607624&w=150&h=150"})
+	Title = "ban_notification";
+	Text = "This script is converted by ban_thid";
+	Icon = "rbxthumb://type=Asset&id=71967665601624&w=150&h=150"})
 Duration = 15;
 
 -------------------||
 --------------------\\
 --||||||||||]]]]]]]]]\\
 ---------------------\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
---CREATED BY johndoe NAME OF SCRIPT: All Seeing Hand                                                                                                     ]]>                                                                                                                                                       |]]>>
+--CREATED BY INFINITEONEWITHDANK NAME OF SCRIPT: All Seeing Hand                                                                                                     ]]>                                                                                                                                                       |]]>>
 ---------------------//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 --||||||||||]]]]]]]]]//
 --------------------//
 -------------------||
 --//THIS WAS NOT FULLY CREATED BY ME:
---||THANKS TO watterincan FOR HELPING WITH THE MODEL
---||THANKS TO 1x1x1x1 Corp. FOR HELPING WITH THE WELDING
+--||THANKS TO CRAZY/THOMASLLOYD12 FOR HELPING WITH THE MODEL
+--||THANKS TO HELKERN/THINKENVIRONMENT FOR HELPING WITH THE WELDING
 --\\SOME SOURCES MAY HAVE BEEN TAKEN FROM OTHER SCRIPTS
 
  local Object = game:GetObjects("rbxassetid://5375399205")[1]  
 Object.Parent = game.Workspace
 script = Object.ASHA
 
-print("Created By John doe on discord Made The Original Base Of This Script")
+print("Created By InfiniteOneWithdank, Shackluster/PityPolygon Made The Original Base Of This Script")
 
 wait(2)
 Player = game.Players.LocalPlayer
