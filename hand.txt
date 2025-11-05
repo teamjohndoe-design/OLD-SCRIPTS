@@ -1,0 +1,3486 @@
+game:GetService("StarterGui"):SetCore("SendNotification", { 
+	Title = "ban_notification";
+	Text = "This script is converted by ban_thid";
+	Icon = "rbxthumb://type=Asset&id=71967665601624&w=150&h=150"})
+Duration = 15;
+
+-------------------||
+--------------------\\
+--||||||||||]]]]]]]]]\\
+---------------------\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+--CREATED BY INFINITEONEWITHDANK NAME OF SCRIPT: All Seeing Hand                                                                                                     ]]>                                                                                                                                                       |]]>>
+---------------------//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+--||||||||||]]]]]]]]]//
+--------------------//
+-------------------||
+--//THIS WAS NOT FULLY CREATED BY ME:
+--||THANKS TO CRAZY/THOMASLLOYD12 FOR HELPING WITH THE MODEL
+--||THANKS TO HELKERN/THINKENVIRONMENT FOR HELPING WITH THE WELDING
+--\\SOME SOURCES MAY HAVE BEEN TAKEN FROM OTHER SCRIPTS
+
+ local Object = game:GetObjects("rbxassetid://5375399205")[1]  
+Object.Parent = game.Workspace
+script = Object.ASHA
+
+print("Created By InfiniteOneWithdank, Shackluster/PityPolygon Made The Original Base Of This Script")
+
+wait(2)
+Player = game.Players.LocalPlayer
+PlayerGui = Player.PlayerGui
+Cam = workspace.CurrentCamera
+Backpack = Player.Backpack
+Character = Player.Character
+Humanoid = Character.Humanoid
+RootPart = Character.HumanoidRootPart
+Torso = Character.Torso
+Head = Character.Head
+Mouse = Player:GetMouse()
+RightArm = Character["Right Arm"]
+LeftArm = Character["Left Arm"]
+RightLeg = Character["Right Leg"]
+LeftLeg = Character["Left Leg"]
+RootJoint = RootPart.RootJoint
+Neck = Torso.Neck
+RightShoulder = Torso["Right Shoulder"]
+LeftShoulder = Torso["Left Shoulder"]
+RightHip = Torso["Right Hip"]
+LeftHip = Torso["Left Hip"]
+local TWEENSERVICE = game:GetService("TweenService")
+local debris = game:GetService("Debris")
+local run = game:GetService("RunService")
+local rs = run.RenderStepped
+local cam = workspace.CurrentCamera
+local HUM = Character.Humanoid
+local ROOT = HUM.Torso
+local MOUSEPOS = ROOT.Position
+local DAMAGEMULTIPLIER = 1
+local TERRIBLE = {}  
+
+IT = Instance.new
+CF = CFrame.new
+VT = Vector3.new
+RAD = math.rad
+C3 = Color3.new
+UD2 = UDim2.new
+BRICKC = BrickColor.new
+ANGLES = CFrame.Angles
+EULER = CFrame.fromEulerAnglesXYZ
+COS = math.cos
+ACOS = math.acos
+SIN = math.sin
+ASIN = math.asin
+ABS = math.abs
+MRANDOM = math.random
+FLOOR = math.floor
+
+-----------------------------------
+--||///////============\\\\\\\\||--
+--><Values	
+Animation_Speed = 3
+Animation_Speed2 = 5
+Frame_Speed = 1 / 60 -- (1 / 30) OR (1 / 60)
+local Speed = 100
+local ROOTC0 = CF(0, 0, 0) * ANGLES(RAD(-90), RAD(0), RAD(180))
+local NECKC0 = CF(0, 1, 0) * ANGLES(RAD(-90), RAD(0), RAD(180))
+local RIGHTSHOULDERC0 = CF(-0.5, 0, 0) * ANGLES(RAD(0), RAD(90), RAD(0))
+local LEFTSHOULDERC0 = CF(0.5, 0, 0) * ANGLES(RAD(0), RAD(-90), RAD(0))
+local DAMAGEMULTIPLIER = 1
+local ANIM = "Idle"
+local ATTACK = false
+local EQUIPPED = false
+local HOLD = false
+local COMBO = 1
+local Rooted = false
+local SINE = 0
+local KEYHOLD = false
+local CHANGE = 2 / Animation_Speed
+local WALKINGANIM = false
+local VALUE1 = false
+local VALUE2 = false
+local ROBLOXIDLEANIMATION = IT("Animation")
+ROBLOXIDLEANIMATION.Name = "Roblox Idle Animation"
+ROBLOXIDLEANIMATION.AnimationId = "http://www.roblox.com/asset/?id=180435571"
+ROBLOXIDLEANIMATION.Parent = Humanoid
+local WEAPONGUI = IT("ScreenGui", PlayerGui)
+WEAPONGUI.Name = "DSCRIPT"
+local Effects = IT("Folder", Character)
+Effects.Name = "Effects"
+local ANIMATOR = Humanoid.Animator
+local ANIMATE = Character.Animate
+local UNANCHOR = true
+local SHOTS = 0
+local TAUNTVALUE = 0
+
+local STUFF = Instance.new("Folder",Character)
+
+local Musika = IT("Sound", RootPart)
+local Volu = 6.5
+local Pitch = 1
+local Song = 2803669496
+local TSPT, TVY, TSTP
+
+local Musika2 = IT("Sound", RootPart)
+local Volu2 = 3
+local Pitch2 = 1
+local Song2 = 0
+local TSPT2, TVY2, TSTP2
+
+local Player_Size = 1
+local WALKINGANIM = false
+local SCALE = 2
+
+local Decal = IT("Decal")
+
+local HITPLAYERSOUNDS = {"263032172", "263032182", "263032200", "263032221", "263032252", "263033191"}
+local HITARMORSOUNDS = {"199149321", "199149338", "199149367", "199149409", "199149452"}
+local HITWEAPONSOUNDS = {"199148971", "199149025", "199149072", "199149109", "199149119"}
+local HITBLOCKSOUNDS = {"199148933", "199148947"}
+
+-----------------------------------
+
+
+-----------------------------------
+--------------------------------->
+-----------------------------------
+
+ArtificialHB = Instance.new("BindableEvent", script)
+ArtificialHB.Name = "ArtificialHB"
+script:WaitForChild("ArtificialHB")
+frame = Frame_Speed
+tf = 0
+allowframeloss = false
+tossremainder = false
+lastframe = tick()
+script.ArtificialHB:Fire()
+game:GetService("RunService").Heartbeat:connect(function(s, p)
+	tf = tf + s
+	if tf >= frame then
+		if allowframeloss then
+			script.ArtificialHB:Fire()
+			lastframe = tick()
+		else
+			for i = 1, math.floor(tf / frame) do
+				script.ArtificialHB:Fire()
+			end
+			lastframe = tick()
+		end
+		if tossremainder then
+			tf = 0
+		else
+			tf = tf - frame * math.floor(tf / frame)
+		end
+	end
+end)
+
+-----------------------------------
+
+--><Some Functions
+function Raycast(POSITION, DIRECTION, RANGE, IGNOREDECENDANTS)
+	return workspace:FindPartOnRay(Ray.new(POSITION, DIRECTION.unit * RANGE), IGNOREDECENDANTS)
+end
+function PositiveAngle(NUMBER)
+	if NUMBER >= 0 then
+		NUMBER = 0
+	end
+	return NUMBER
+end
+function NegativeAngle(NUMBER)
+	if NUMBER <= 0 then
+		NUMBER = 0
+	end
+	return NUMBER
+end
+function Swait(NUMBER)
+	if NUMBER == 0 or NUMBER == nil then
+		ArtificialHB.Event:wait()
+	else
+		for i = 1, NUMBER do
+			ArtificialHB.Event:wait()
+		end
+	end
+end
+function CreateMesh(MESH, PARENT, MESHTYPE, MESHID, TEXTUREID, SCALE, OFFSET)
+	local NEWMESH = IT(MESH)
+	if MESH == "SpecialMesh" then
+		NEWMESH.MeshType = MESHTYPE
+		if MESHID ~= "nil" and MESHID ~= "" then
+			NEWMESH.MeshId = "http://www.roblox.com/asset/?id=" .. MESHID
+		end
+		if TEXTUREID ~= "nil" and TEXTUREID ~= "" then
+			NEWMESH.TextureId = "http://www.roblox.com/asset/?id=" .. TEXTUREID
+		end
+	end
+	NEWMESH.Offset = OFFSET or VT(0, 0, 0)
+	NEWMESH.Scale = SCALE
+	NEWMESH.Parent = PARENT
+	return NEWMESH
+end
+function CreatePart(FORMFACTOR, PARENT, MATERIAL, REFLECTANCE, TRANSPARENCY, BRICKCOLOR, NAME, SIZE, ANCHOR)
+	local NEWPART = IT("Part")
+	NEWPART.formFactor = FORMFACTOR
+	NEWPART.Reflectance = REFLECTANCE
+	NEWPART.Transparency = TRANSPARENCY
+	NEWPART.CanCollide = false
+	NEWPART.Locked = true
+	NEWPART.Anchored = true
+	if ANCHOR == false then
+		NEWPART.Anchored = false
+	end
+	NEWPART.BrickColor = BRICKC(tostring(BRICKCOLOR))
+	NEWPART.Name = NAME
+	NEWPART.Size = SIZE
+	NEWPART.Position = Torso.Position
+	NEWPART.Material = MATERIAL
+	NEWPART:BreakJoints()
+	NEWPART.Parent = PARENT
+	return NEWPART
+end
+local weldBetween = function(a, b)
+	local weldd = Instance.new("ManualWeld")
+	weldd.Part0 = a
+	weldd.Part1 = b
+	weldd.C0 = CFrame.new()
+	weldd.C1 = b.CFrame:inverse() * a.CFrame
+	weldd.Parent = a
+	return weldd
+end
+function weldSomethings(a, b, acf)
+    local we = Instance.new("Weld", a)
+    we.Part0 = a
+    we.Part1 = b
+if acf ~= nil then
+    we.C0 = acf
+end
+end
+function QuaternionFromCFrame(cf)
+	local mx, my, mz, m00, m01, m02, m10, m11, m12, m20, m21, m22 = cf:components()
+	local trace = m00 + m11 + m22
+	if trace > 0 then
+		local s = math.sqrt(1 + trace)
+		local recip = 0.5 / s
+		return (m21 - m12) * recip, (m02 - m20) * recip, (m10 - m01) * recip, s * 0.5
+	else
+		local i = 0
+		if m00 < m11 then
+			i = 1
+		end
+		if m22 > (i == 0 and m00 or m11) then
+			i = 2
+		end
+		if i == 0 then
+			local s = math.sqrt(m00 - m11 - m22 + 1)
+			local recip = 0.5 / s
+			return 0.5 * s, (m10 + m01) * recip, (m20 + m02) * recip, (m21 - m12) * recip
+		elseif i == 1 then
+			local s = math.sqrt(m11 - m22 - m00 + 1)
+			local recip = 0.5 / s
+			return (m01 + m10) * recip, 0.5 * s, (m21 + m12) * recip, (m02 - m20) * recip
+		elseif i == 2 then
+			local s = math.sqrt(m22 - m00 - m11 + 1)
+			local recip = 0.5 / s
+			return (m02 + m20) * recip, (m12 + m21) * recip, 0.5 * s, (m10 - m01) * recip
+		end
+	end
+end
+function QuaternionToCFrame(px, py, pz, x, y, z, w)
+	local xs, ys, zs = x + x, y + y, z + z
+	local wx, wy, wz = w * xs, w * ys, w * zs
+	local xx = x * xs
+	local xy = x * ys
+	local xz = x * zs
+	local yy = y * ys
+	local yz = y * zs
+	local zz = z * zs
+	return CFrame.new(px, py, pz, 1 - (yy + zz), xy - wz, xz + wy, xy + wz, 1 - (xx + zz), yz - wx, xz - wy, yz + wx, 1 - (xx + yy))
+end
+function QuaternionSlerp(a, b, t)
+	local cosTheta = a[1] * b[1] + a[2] * b[2] + a[3] * b[3] + a[4] * b[4]
+	local startInterp, finishInterp
+	if cosTheta >= 1.0E-4 then
+		if 1 - cosTheta > 1.0E-4 then
+			local theta = ACOS(cosTheta)
+			local invSinTheta = 1 / SIN(theta)
+			startInterp = SIN((1 - t) * theta) * invSinTheta
+			finishInterp = SIN(t * theta) * invSinTheta
+		else
+			startInterp = 1 - t
+			finishInterp = t
+		end
+	elseif 1 + cosTheta > 1.0E-4 then
+		local theta = ACOS(-cosTheta)
+		local invSinTheta = 1 / SIN(theta)
+		startInterp = SIN((t - 1) * theta) * invSinTheta
+		finishInterp = SIN(t * theta) * invSinTheta
+	else
+		startInterp = t - 1
+		finishInterp = t
+	end
+	return a[1] * startInterp + b[1] * finishInterp, a[2] * startInterp + b[2] * finishInterp, a[3] * startInterp + b[3] * finishInterp, a[4] * startInterp + b[4] * finishInterp
+end
+function Clerp(a, b, t)
+	local qa = {
+		QuaternionFromCFrame(a)
+	}
+	local qb = {
+		QuaternionFromCFrame(b)
+	}
+	local ax, ay, az = a.x, a.y, a.z
+	local bx, by, bz = b.x, b.y, b.z
+	local _t = 1 - t
+	return QuaternionToCFrame(_t * ax + t * bx, _t * ay + t * by, _t * az + t * bz, QuaternionSlerp(qa, qb, t))
+end
+function CreateFrame(PARENT, TRANSPARENCY, BORDERSIZEPIXEL, POSITION, SIZE, COLOR, BORDERCOLOR, NAME)
+	local frame = IT("Frame")
+	frame.BackgroundTransparency = TRANSPARENCY
+	frame.BorderSizePixel = BORDERSIZEPIXEL
+	frame.Position = POSITION
+	frame.Size = SIZE
+	frame.BackgroundColor3 = COLOR
+	frame.BorderColor3 = BORDERCOLOR
+	frame.Name = NAME
+	frame.Parent = PARENT
+	return frame
+end
+function CreateLabel(PARENT, TEXT, TEXTCOLOR, TEXTFONTSIZE, TEXTFONT, TRANSPARENCY, BORDERSIZEPIXEL, STROKETRANSPARENCY, NAME)
+	local label = IT("TextLabel")
+	label.BackgroundTransparency = 1
+	label.Size = UD2(1, 0, 1, 0)
+	label.Position = UD2(0, 0, 0, 0)
+	label.TextColor3 = TEXTCOLOR
+	label.TextStrokeTransparency = STROKETRANSPARENCY
+	label.TextTransparency = TRANSPARENCY
+	label.FontSize = TEXTFONTSIZE
+	label.Font = TEXTFONT
+	label.BorderSizePixel = BORDERSIZEPIXEL
+	label.TextScaled = false
+	label.Text = TEXT
+	label.Name = NAME
+	label.Parent = PARENT
+	return label
+end
+function NoOutlines(PART)
+	PART.TopSurface, PART.BottomSurface, PART.LeftSurface, PART.RightSurface, PART.FrontSurface, PART.BackSurface = 10, 10, 10, 10, 10, 10
+end
+function CreateWeldOrSnapOrMotor(TYPE, PARENT, PART0, PART1, C0, C1)
+	local NEWWELD = IT(TYPE)
+	NEWWELD.Part0 = PART0
+	NEWWELD.Part1 = PART1
+	NEWWELD.C0 = C0
+	NEWWELD.C1 = C1
+	NEWWELD.Parent = PARENT
+	return NEWWELD
+end
+local S = IT("Sound")
+function CreateSound(ID, PARENT, VOLUME, PITCH, DOESLOOP)
+	local NEWSOUND
+	coroutine.resume(coroutine.create(function()
+		NEWSOUND = S:Clone()
+		NEWSOUND.Parent = PARENT
+		NEWSOUND.Volume = VOLUME
+		NEWSOUND.Pitch = PITCH
+		NEWSOUND.EmitterSize = VOLUME * 3
+		NEWSOUND.SoundId = "http://www.roblox.com/asset/?id=" .. ID
+		NEWSOUND:play()
+		if DOESLOOP == true then
+			NEWSOUND.Looped = true
+		else
+			repeat
+				wait(1)
+			until NEWSOUND.Playing == false
+			NEWSOUND:remove()
+		end
+	end))
+	return NEWSOUND
+end
+function NewSound(TABLE)
+	local ID = "rbxassetid://"..(TABLE.ID or 0)
+	local PARENT = (TABLE.PARENT or ROOT)
+	local VOLUME = (TABLE.VOLUME or 0.5)
+	local PITCH = (TABLE.PITCH or 1)
+	local LOOP = (TABLE.LOOP or false)
+	local MAXDISTANCE = (TABLE.MAXDISTANCE or 100)
+	local EMITTERSIZE = (TABLE.EMITTERSIZE or 10)
+	local PLAYING = (TABLE.PLAYING or true)
+	local PLAYONREMOVE = (TABLE.PLAYONREMOVE or false)
+	local DOESDEBRIS = (TABLE.DOESDEBRIS or true)
+	if ID ~= "rbxassetid://19287372828" then
+		local SOUND = IT("Sound",PARENT)
+		SOUND.SoundId = ID
+		SOUND.Volume = VOLUME
+		SOUND.Pitch = PITCH
+		SOUND.Looped = LOOP
+		SOUND.MaxDistance = MAXDISTANCE
+		SOUND.EmitterSize = EMITTERSIZE
+		SOUND.PlayOnRemove = PLAYONREMOVE
+		if DOESDEBRIS == true and PLAYING == true and LOOP == false then
+			Debris:AddItem(SOUND,SOUND.TimeLength+5)
+		end
+		if PLAYING == true then
+			SOUND:Play()
+		end
+		return SOUND
+	end
+end 
+function CFrameFromTopBack(at, top, back)
+	local right = top:Cross(back)
+	return CF(at.x, at.y, at.z, right.x, top.x, back.x, right.y, top.y, back.y, right.z, top.z, back.z)
+end
+function MagicRing()
+	local O1 = CreatePart(3, Effects, "Neon", 0, 1, "Really black", "Warphole", VT(0, 0, 0))
+	O1.CFrame = RootPart.CFrame * CF(0, 0, -3) * ANGLES(RAD(90), RAD(0), RAD(0))
+	local decal = Decal:Clone()
+	decal.Parent = O1
+	decal.Face = "Top"
+	decal.Texture = "http://www.roblox.com/asset/?id=2198272822"
+	local decal2 = Decal:Clone()
+	decal2.Parent = O1
+	decal2.Face = "Bottom"
+	decal2.Texture = "http://www.roblox.com/asset/?id=187337822"
+	return O1
+end
+function MagicRing2(PART,CFRAME)
+	local RING = CreatePart(3, Effects, "Neon", 0, 1, "Royal purple", "MagicRing", VT(0,0,0),false)
+	local WELD = CreateWeldOrSnapOrMotor("Weld", PART, PART, RING, CFRAME, CF(0, 0, 0))
+	local MESH = IT("BlockMesh",RING)
+	local BOTTOMTEXTURE = Decal:Clone()
+	BOTTOMTEXTURE.Parent = RING
+	BOTTOMTEXTURE.Face = "Bottom"
+	BOTTOMTEXTURE.Name = "BottomTexture"
+	local TOPTEXTURE = Decal:Clone()
+	TOPTEXTURE.Parent = RING
+	TOPTEXTURE.Face = "Top"
+	TOPTEXTURE.Name = "TopTexture"
+	local LIGHT = IT("PointLight",RING)
+	BOTTOMTEXTURE.Texture = "http://www.roblox.com/asset/?id=2829906887"
+	TOPTEXTURE.Texture = "http://www.roblox.com/asset/?id=2829906887"
+	return RING,WELD,MESH
+end
+local DECAL = IT("Decal")
+function MagicRing3()
+	local RING = CreatePart(3, Effects, "Neon", 0, 1, BRICKC("Pearl"), "MagicRing", VT(0, 0, 0), true)
+	local MSH = IT("BlockMesh", RING)
+	local TOP = DECAL:Clone()
+	local BOTTOM = DECAL:Clone()
+	TOP.Parent = RING
+	BOTTOM.Parent = RING
+	TOP.Face = "Top"
+	BOTTOM.Face = "Bottom"
+	TOP.Texture = "http://www.roblox.com/asset/?id=282838282"
+	BOTTOM.Texture = "http://www.roblox.com/asset/?id=28837382"
+	local function REMOVE()
+		coroutine.resume(coroutine.create(function()
+			local SIZE = MSH.Scale.X
+			for i = 1, 35 do
+				Swait()
+				MSH.Scale = MSH.Scale - VT(SIZE, 0, SIZE) / 60
+				TOP.Transparency = TOP.Transparency + 0.02857142857142857
+				BOTTOM.Transparency = BOTTOM.Transparency + 0.02857142857142857
+				RING.CFrame = RING.CFrame * ANGLES(RAD(0), RAD(-5), RAD(0))
+			end
+			RING:remove()
+		end))
+	end
+	return RING, MSH, REMOVE
+end
+function CreateWave(SIZE, WAIT, CFRAME, DOESROT, ROT, COLOR, GROW)
+	local wave = CreatePart(3, Effects, "Neon", 0, 0.5, BRICKC(COLOR), "Effect", VT(0, 0, 0))
+	local mesh = CreateMesh("SpecialMesh", wave, "FileMesh", "20329976", "", SIZE, VT(0, 0, -SIZE.X / 8))
+	wave.CFrame = CFRAME
+	coroutine.resume(coroutine.create(function(PART)
+		for i = 1, WAIT do
+			Swait()
+			mesh.Scale = mesh.Scale + GROW
+			mesh.Offset = VT(0, 0, -(mesh.Scale.X / 8))
+			if DOESROT == true then
+				wave.CFrame = wave.CFrame * CFrame.fromEulerAnglesXYZ(0, ROT, 0)
+			end
+			wave.Transparency = wave.Transparency + 0.5 / WAIT
+			if wave.Transparency > 0.99 then
+				wave:remove()
+			end
+		end
+	end))
+end
+function SpecialSphere(SIZE,WAIT,CFRAME,COLOR,GROW)
+    local wave = CreatePart(3, Effects, "Neon", 0, 0, BRICKC(COLOR), "Eye", VT(1,1,1), true)
+    wave.Color = COLOR
+    local mesh = CreateMesh("SpecialMesh", wave, "Sphere", "", "", SIZE, VT(0,0,0))
+    wave.CFrame = CFRAME
+    coroutine.resume(coroutine.create(function(PART)
+        for i = 1, WAIT do
+            Swait()
+            mesh.Scale = mesh.Scale + GROW
+            wave.Transparency = wave.Transparency + (1/WAIT)
+            if wave.Transparency > 0.99 then
+                wave:remove()
+            end
+        end
+    end))
+end
+function MagicSphere(SIZE,WAIT,CFRAME,COLOR,GROW)
+	local wave = CreatePart(3, Effects, "Neon", 0, 0, BRICKC(COLOR), "Effect", VT(1,1,1), true)
+	local mesh = IT("SpecialMesh",wave)
+	mesh.MeshType = "Sphere"
+	mesh.Scale = SIZE
+	mesh.Offset = VT(0,0,0)
+	wave.CFrame = CFRAME
+	coroutine.resume(coroutine.create(function(PART)
+		for i = 1, WAIT do
+			Swait()
+			mesh.Scale = mesh.Scale + GROW
+			wave.Transparency = wave.Transparency + (1/WAIT)
+			if wave.Transparency > 0.99 then
+				wave:remove()
+			end
+		end
+	end))
+end
+function WACKYEFFECT(Table)
+	local TYPE = Table.EffectType or "Sphere"
+	local SIZE = Table.Size or VT(1, 1, 1)
+	local ENDSIZE = Table.Size2 or VT(0, 0, 0)
+	local TRANSPARENCY = Table.Transparency or 0
+	local ENDTRANSPARENCY = Table.Transparency2 or 1
+	local CFRAME = Table.CFrame or Torso.CFrame
+	local MOVEDIRECTION = Table.MoveToPos or nil
+	local ROTATION1 = Table.RotationX or 0
+	local ROTATION2 = Table.RotationY or 0
+	local ROTATION3 = Table.RotationZ or 0
+	local MATERIAL = Table.Material --or "Neon"
+	local COLOR = Table.Color or C3(1, 1, 1)
+	local TIME = Table.Time or 45
+	local SOUNDID = Table.SoundID or nil
+	local SOUNDPITCH = Table.SoundPitch or nil
+	local SOUNDVOLUME = Table.SoundVolume or nil
+	local USEBOOMERANGMATH = Table.UseBoomerangMath or false
+	local BOOMERANG = Table.Boomerang or 0
+	local SIZEBOOMERANG = Table.SizeBoomerang or 0
+	coroutine.resume(coroutine.create(function()
+		local PLAYSSOUND = false
+		local SOUND
+		local EFFECT = CreatePart(3, Effects, MATERIAL, 0, TRANSPARENCY, BRICKC("Pearl"), "Effect", VT(1, 1, 1), true)
+		if SOUNDID ~= nil and SOUNDPITCH ~= nil and SOUNDVOLUME ~= nil then
+			PLAYSSOUND = true
+			SOUND = CreateSound(SOUNDID, EFFECT, SOUNDVOLUME, SOUNDPITCH, false)
+		end
+		EFFECT.Color = COLOR
+		local MSH
+		if TYPE == "Sphere" then
+			MSH = CreateMesh("SpecialMesh", EFFECT, "Sphere", "", "", SIZE, VT(0, 0, 0))
+		elseif TYPE == "Block" or TYPE == "Box" then
+			MSH = IT("BlockMesh", EFFECT)
+			MSH.Scale = SIZE
+		elseif TYPE == "Wave" then
+			MSH = CreateMesh("SpecialMesh", EFFECT, "FileMesh", "20329976", "", SIZE, VT(0, 0, -SIZE.X / 8))
+		elseif TYPE == "Ring" then
+			MSH = CreateMesh("SpecialMesh", EFFECT, "FileMesh", "559831844", "", VT(SIZE.X, SIZE.X, 0.1), VT(0, 0, 0))
+		elseif TYPE == "Slash" then
+			MSH = CreateMesh("SpecialMesh", EFFECT, "FileMesh", "662586858", "", VT(SIZE.X / 10, 0, SIZE.X / 10), VT(0, 0, 0))
+		elseif TYPE == "Round Slash" then
+			MSH = CreateMesh("SpecialMesh", EFFECT, "FileMesh", "662585058", "", VT(SIZE.X / 10, 0, SIZE.X / 10), VT(0, 0, 0))
+		elseif TYPE == "Swirl" then
+			MSH = CreateMesh("SpecialMesh", EFFECT, "FileMesh", "168892432", "", SIZE, VT(0, 0, 0))
+		elseif TYPE == "Skull" then
+			MSH = CreateMesh("SpecialMesh", EFFECT, "FileMesh", "4770583", "", SIZE, VT(0, 0, 0))
+		elseif TYPE == "Star" then 
+			MSH = CreateMesh("SpecialMesh", EFFECT, "FileMesh", "2760116123", "", SIZE, VT(0,0,0))   	
+		elseif TYPE == "Crystal" then
+			MSH = CreateMesh("SpecialMesh", EFFECT, "FileMesh", "450656451", "", SIZE, VT(0, 0, 0))
+		end
+		coroutine.resume(coroutine.create(function()
+			if MSH ~= nil then
+				local BOOMR1 = 1 + BOOMERANG / 50
+				local BOOMR2 = 1 + SIZEBOOMERANG / 50
+				local MOVESPEED = nil
+			if MOVEDIRECTION ~= nil then
+				MOVESPEED = (CFRAME.p - MOVEDIRECTION).Magnitude/TIME
+			end
+				local GROWTH
+				if USEBOOMERANGMATH == true then
+					GROWTH = (SIZE - ENDSIZE) * (BOOMR2 + 1)
+				else
+					GROWTH = SIZE - ENDSIZE
+				end
+				local TRANS = TRANSPARENCY - ENDTRANSPARENCY
+				if TYPE == "Block" then
+					EFFECT.CFrame = CFRAME * ANGLES(RAD(MRANDOM(0, 360)), RAD(MRANDOM(0, 360)), RAD(MRANDOM(0, 360)))
+				else
+					EFFECT.CFrame = CFRAME
+				end
+				if USEBOOMERANGMATH == true then
+					for LOOP = 1, TIME + 1 do
+						Swait()
+						MSH.Scale = MSH.Scale - VT(GROWTH.X * (1 - LOOP / TIME * BOOMR2), GROWTH.Y * (1 - LOOP / TIME * BOOMR2), GROWTH.Z * (1 - LOOP / TIME * BOOMR2)) * BOOMR2 / TIME
+						if TYPE == "Wave" then
+							MSH.Offset = VT(0, 0, -MSH.Scale.Z / 8)
+						end
+						EFFECT.Transparency = EFFECT.Transparency - TRANS / TIME
+						if TYPE == "Block" then
+							EFFECT.CFrame = CFRAME * ANGLES(RAD(MRANDOM(0, 360)), RAD(MRANDOM(0, 360)), RAD(MRANDOM(0, 360)))
+						else
+							EFFECT.CFrame = EFFECT.CFrame * ANGLES(RAD(ROTATION1), RAD(ROTATION2), RAD(ROTATION3))
+						end
+						if MOVEDIRECTION ~= nil then
+							local ORI = EFFECT.Orientation
+							EFFECT.CFrame = CF(EFFECT.Position, MOVEDIRECTION) * CF(0, 0, -MOVESPEED * (1 - LOOP / TIME * BOOMR1))
+							EFFECT.Orientation = ORI
+						end
+					end
+				else
+					for LOOP = 1, TIME + 1 do
+						Swait()
+						MSH.Scale = MSH.Scale - GROWTH / TIME
+						if TYPE == "Wave" then
+							MSH.Offset = VT(0, 0, -MSH.Scale.Z / 8)
+						end
+						EFFECT.Transparency = EFFECT.Transparency - TRANS / TIME
+						if TYPE == "Block" then
+							EFFECT.CFrame = CFRAME * ANGLES(RAD(MRANDOM(0, 360)), RAD(MRANDOM(0, 360)), RAD(MRANDOM(0, 360)))
+						else
+							EFFECT.CFrame = EFFECT.CFrame * ANGLES(RAD(ROTATION1), RAD(ROTATION2), RAD(ROTATION3))
+						end
+						if MOVEDIRECTION ~= nil then
+					local ORI = EFFECT.Orientation
+					EFFECT.CFrame = CF(EFFECT.Position,MOVEDIRECTION)*CF(0,0,-MOVESPEED)
+					EFFECT.Orientation = ORI
+				end
+			end
+				end
+				EFFECT.Transparency = 1
+				if PLAYSSOUND == false then
+					EFFECT:remove()
+				else
+					repeat
+						Swait()
+					until EFFECT:FindFirstChildOfClass("Sound") == nil
+					EFFECT:remove()
+				end
+			elseif PLAYSSOUND == false then
+				EFFECT:remove()
+			else
+				repeat
+					Swait()
+				until EFFECT:FindFirstChildOfClass("Sound") == nil
+				EFFECT:remove()
+			end
+		end))
+		return EFFECT
+	end))
+end   
+function CharacterFade(COLOR,TIMER)
+	coroutine.resume(coroutine.create(function()
+		local FADE = IT("Model",Effects)
+		FADE.Name = "FadingEffect"
+		for _, c in pairs(Character:GetChildren()) do
+			if c.ClassName == "Part" and c ~= RootPart then
+				local FADER = c:Clone()
+				FADER.Color = COLOR
+				FADER.CFrame = c.CFrame
+				FADER.Parent = FADE
+				FADER.Anchored = true
+				FADER.Transparency = 0.25+c.Transparency
+				FADER:BreakJoints()
+				FADER.Material = "Neon"
+				if FADER.Name == "Head" then
+					FADER:ClearAllChildren()
+					FADER.Size = VT(1,1,1)
+				end
+				if c and c.Parent and c.ClassName == "ShirtGraphic" then
+					c:Destroy()
+				end	
+				FADER.CanCollide = false
+			end
+		end
+		local TRANS = 0.75/TIMER
+		for i = 1, TIMER do
+			Swait()
+			for _, c in pairs(FADE:GetChildren()) do
+				if c.ClassName == "Part" then
+					c.Transparency = c.Transparency + TRANS
+				end
+			end
+		end
+		FADE:remove()
+	end))
+end   
+function Lightning(Table)
+	local Color = Table.Color or C3(1, 1, 1)
+	local StartPos = Table.Start or Torso.Position
+	local EndPos = Table.End or Mouse.Hit.p
+	local SegmentLength = Table.SegmentL or 2
+	local Thickness = Table.Thickness or 0.1
+	local Dissapear = Table.DoesFade or false
+	local Parent = Table.Ignore or Character
+	local MaxDist = Table.MaxDist or 400
+	local Branches = Table.Branches or false
+	local Thicken = Table.Thicken or false
+	local FadeTime = Table.FadeTime or 15
+	local FadeIn = Table.FadeIn or false
+	local Material = Table.Material or "Neon"
+	local HIT, HITPOS = CastProperRay(StartPos, EndPos, MaxDist, Parent)
+	local DISTANCE = math.ceil((StartPos - HITPOS).Magnitude / (SegmentLength / SegmentLength / 1.5))
+	local LIGHTNINGMODEL = IT("Model", Effects)
+	LIGHTNINGMODEL.Name = "Lightning"
+	local LastBolt
+	for E = 1, DISTANCE do
+		local ExtraSize = 0
+		if Thicken == true then
+			ExtraSize = (DISTANCE - E) / 15
+		end
+		local TRANSPARENCY = 0
+		if FadeIn == true then
+			TRANSPARENCY = 1 - E / (DISTANCE / 1.5)
+			if TRANSPARENCY < 0 then
+				TRANSPARENCY = 0
+			end
+		end
+		local PART = CreatePart(3, LIGHTNINGMODEL, Material, 0, TRANSPARENCY, BRICKC("Pearl"), "LightningPart" .. E, VT(Thickness + ExtraSize, SegmentLength, Thickness + ExtraSize))
+		PART.Color = Color
+		MakeForm(PART, "Cyl")
+		if LastBolt == nil then
+			PART.CFrame = CF(StartPos, HITPOS) * ANGLES(RAD(90), RAD(0), RAD(0)) * CF(0, -PART.Size.Y / 2, 0)
+		else
+			PART.CFrame = CF(LastBolt.CFrame * CF(0, -LastBolt.Size.Y / 2, 0).p, CF(HITPOS) * ANGLES(RAD(MRANDOM(0, 360)), RAD(MRANDOM(0, 360)), RAD(MRANDOM(0, 360))) * CF(0, 0, DISTANCE - E).p) * ANGLES(RAD(90), RAD(0), RAD(0)) * CF(0, -PART.Size.Y / 2, 0)
+		end
+		LastBolt = PART
+		if Branches == true and E < DISTANCE - 5 then
+			local CHOICE = MRANDOM(1, 7 + (DISTANCE - E) * 2)
+			if CHOICE == 1 then
+				local LASTBRANCH
+				for i = 1, MRANDOM(2, 5) do
+					local ExtraSize2 = 0
+					if Thicken == true then
+						ExtraSize = (DISTANCE - E) / 25 / i
+					end
+					local PART = CreatePart(3, LIGHTNINGMODEL, Material, 0, TRANSPARENCY, BRICKC("Pearl"), "Branch" .. E .. "-" .. i, VT(Thickness + ExtraSize2, SegmentLength, Thickness + ExtraSize2))
+					PART.Color = Color
+					MakeForm(PART, "Cyl")
+					if LASTBRANCH == nil then
+						PART.CFrame = CF(LastBolt.CFrame * CF(0, -LastBolt.Size.Y / 2, 0).p, LastBolt.CFrame * CF(0, -LastBolt.Size.Y / 2, 0) * ANGLES(RAD(0), RAD(0), RAD(MRANDOM(0, 360))) * CF(0, Thickness * 7, 0) * CF(0, 0, -1).p) * ANGLES(RAD(90), RAD(0), RAD(0)) * CF(0, -PART.Size.Y / 2, 0)
+					else
+						PART.CFrame = CF(LASTBRANCH.CFrame * CF(0, -LASTBRANCH.Size.Y / 2, 0).p, LASTBRANCH.CFrame * CF(0, -LASTBRANCH.Size.Y / 2, 0) * ANGLES(RAD(0), RAD(0), RAD(MRANDOM(0, 360))) * CF(0, Thickness * 3, 0) * CF(0, 0, -1).p) * ANGLES(RAD(90), RAD(0), RAD(0)) * CF(0, -PART.Size.Y / 2, 0)
+					end
+					LASTBRANCH = PART
+				end
+			end
+		end
+	end
+	if Dissapear == true then
+		coroutine.resume(coroutine.create(function()
+			for i = 1, FadeTime do
+				Swait()
+				for _, c in pairs(LIGHTNINGMODEL:GetChildren()) do
+					if c.ClassName == "Part" then
+						c.Transparency = c.Transparency + 1 / FadeTime
+					end
+				end
+			end
+			LIGHTNINGMODEL:remove()
+		end))
+	elseif Dissapear == false then
+		Debris:AddItem(LIGHTNINGMODEL, 0.1)
+	end
+	return {
+		Hit = HIT,
+		Pos = HITPOS,
+		End = LastBolt.CFrame * CF(0, 0, -LastBolt.Size.Z).p,
+		LastBolt = LastBolt,
+		Model = LIGHTNINGMODEL
+	}
+end
+function GetRoot(MODEL, ROOT)
+	if ROOT == true then
+		return MODEL:FindFirstChild("HumanoidRootPart") or MODEL:FindFirstChild("Torso") or MODEL:FindFirstChild("UpperTorso")
+	else
+		return MODEL:FindFirstChild("Torso") or MODEL:FindFirstChild("UpperTorso")
+	end
+end
+function MakeForm(PART, TYPE)
+	if TYPE == "Cyl" then
+		local MSH = IT("CylinderMesh", PART)
+	elseif TYPE == "Ball" then
+		local MSH = IT("SpecialMesh", PART)
+		MSH.MeshType = "Sphere"
+	elseif TYPE == "Wedge" then
+		local MSH = IT("SpecialMesh", PART)
+		MSH.MeshType = "Wedge"
+	end
+end
+
+Debris = game:GetService("Debris")
+local Particle = IT("ParticleEmitter",nil)
+Particle.Enabled = false
+Particle.LightEmission = 0.8
+Particle.Rate = 150
+Particle.ZOffset = 1
+Particle.Rotation = NumberRange.new(-180, 180)
+
+--ParticleEmitter({Speed = 5, RotSpeed = NumberRange.new(-15, 15), Drag = 0, Size1 = 1, Size2 = 5, Lifetime1 = 1, Lifetime2 = 1.5, Parent = Torso, Emit = 100, Offset = 360, Enabled = false, Color1 = C3(1,1,1), Color2 = C3(1,1,1), Texture = ""})
+function ParticleEmitter(Table)
+	local PRTCL = Particle:Clone()
+	local Color1 = Table.Color1 or C3(1,1,1)
+	local Color2 = Table.Color2 or C3(1,1,1)
+	local Speed = Table.Speed or 5
+	local Drag = Table.Drag or 0
+	local Size1 = Table.Size1 or 1
+	local Size2 = Table.Size2 or 5
+	local Lifetime1 = Table.Lifetime1 or 1
+	local Lifetime2 = Table.Lifetime2 or 1.5
+	local Parent = Table.Parent or Torso
+	local Emit = Table.Emit or 100
+	local Offset = Table.Offset or 360
+	local Acel = Table.Acel or VT(0,0,0)
+	local Enabled = Table.Enabled or false
+	local Texture = Table.Texture or "281983280"
+	local RotS = Table.RotSpeed or NumberRange.new(-15, 15)
+	local Trans1 = Table.Transparency1 or 0
+	local Trans2 = Table.Transparency2 or 0
+	PRTCL.Parent = Parent
+	PRTCL.RotSpeed = RotS
+	PRTCL.Transparency = NumberSequence.new({NumberSequenceKeypoint.new(0,Trans1),NumberSequenceKeypoint.new(1,Trans2)})
+	PRTCL.Texture = "http://www.roblox.com/asset/?id="..Texture
+	PRTCL.Color = ColorSequence.new(Color1,Color2)
+	PRTCL.Size = NumberSequence.new(Size1,Size2)
+	PRTCL.Lifetime = NumberRange.new(Lifetime1,Lifetime2)
+	PRTCL.Speed = NumberRange.new(Speed)
+	PRTCL.VelocitySpread = Offset
+	PRTCL.Drag = Drag
+	PRTCL.Acceleration = Acel
+	if Enabled == false then
+		PRTCL:Emit(Emit)
+		Debris:AddItem(PRTCL,Lifetime2)
+	else
+		PRTCL.Enabled = true
+	end
+	return PRTCL
+end
+function CastProperRay(StartPos, EndPos, Distance, Ignore)
+	local DIRECTION = CF(StartPos, EndPos).lookVector
+	local Ignore = type(Ignore) == "table" and Ignore or {Ignore}
+	return game:GetService("Workspace"):FindPartOnRayWithIgnoreList(Ray.new(StartPos, DIRECTION * Distance), Ignore)
+end
+function SpawnTrail(FROM,TO,BIG)
+local TRAIL = CreatePart(3, Effects, "Neon", 0, 0, "Faded green", "Trail", VT(45,45,45)*3)   
+TRAIL.Color = C3(.45,1,.45)       
+MakeForm(TRAIL,"Cyl")
+	local DIST = (FROM - TO).Magnitude
+	if BIG == true then
+		TRAIL.Size = VT(2,DIST,20)
+	else
+		TRAIL.Size = VT(2,DIST,20)
+	end
+	TRAIL.CFrame = CF(FROM, TO) * CF(0, 0, -DIST/2) * ANGLES(RAD(90),RAD(0),RAD(0))
+	coroutine.resume(coroutine.create(function()
+		for i = 1, 25 do 
+			Swait()
+			TRAIL.Transparency = TRAIL.Transparency + 0.05
+			TRAIL.Size = TRAIL.Size - VT(.45,0,.45)
+		end
+		TRAIL:remove()
+	end))
+end
+function Debree(Table)
+	local KindOf = Table.Variant or "Ring"
+	local Position = Table.Location or Torso.Position
+	local Coloration = Table.Color or C3(1, 1, 1)
+	local Texture = Table.Material or "Slate"
+	local Fling = Table.Scatter or 1
+	local Number = Table.Amount or 1
+	local Rocks = Table.DebreeCount or 1
+	local Range = Table.Distance or 1
+	local Scale = Table.Size or 1
+	local Timer = Table.Delay or 1.5
+	coroutine.resume(coroutine.create(function()
+		local ScaleVector = VT(Scale, Scale, Scale)
+		local Boulders = {}
+		Position = CF(Position)
+		if KindOf == "Ring" or KindOf == "Both" then
+			for RockValue = 1, Number do
+				local LOCATION = Position * ANGLES(RAD(0), RAD(360 / Number * RockValue), RAD(0)) * CF(0, MRANDOM(-math.ceil(Scale / 2), math.ceil(Scale / 2)), Range)
+				local BOULDER = CreatePart(3, workspace, Texture, 0, 0, BRICKC("Pearl"), "Debree", ScaleVector, true)
+				BOULDER.CanCollide = true
+				BOULDER.CFrame = LOCATION * ANGLES(RAD(MRANDOM(0, 360)), RAD(MRANDOM(0, 360)), RAD(MRANDOM(0, 360)))
+				BOULDER.Color = Coloration
+				table.insert(Boulders, BOULDER)
+			end
+		end
+		if KindOf == "Loose" or KindOf == "Both" then
+			for RockValue = 1, Rocks do
+				local LOCATION = Position * ANGLES(RAD(0), RAD(360 / Number * RockValue), RAD(0)) * CF(0, MRANDOM(-math.ceil(Scale - Scale / 2), math.ceil(Scale - Scale / 2)), 0.7)
+				local BOULDER = CreatePart(3, workspace, Texture, 0, 0, BRICKC("Pearl"), "Debree", ScaleVector, false)
+				BOULDER.CanCollide = true
+				BOULDER.CFrame = LOCATION * ANGLES(RAD(MRANDOM(0, 360)), RAD(MRANDOM(0, 360)), RAD(MRANDOM(0, 360)))
+				BOULDER.Velocity = CF(BOULDER.Position - VT(0, 4, 0), BOULDER.CFrame * ANGLES(RAD(MRANDOM(0, 360)), RAD(MRANDOM(0, 360)), RAD(MRANDOM(0, 360))) * CF(0, 5, 0).p).lookVector * MRANDOM(Fling - Fling / 1.5, Fling + Fling / 1.5)
+				BOULDER.Color = Coloration
+				table.insert(Boulders, BOULDER)
+			end
+		end
+		if KindOf == "Random" then
+			for RockValue = 1, Number do
+				local LOCATION = Position * ANGLES(RAD(0), RAD(360 / Number * RockValue), RAD(0)) * CF(0, MRANDOM(-math.ceil(Scale / 2), math.ceil(Scale / 2)), MRANDOM(0, Range))
+				local BOULDER = CreatePart(3, workspace, Texture, 0, 0, BRICKC("Pearl"), "Debree", ScaleVector, true)
+				BOULDER.CanCollide = true
+				BOULDER.CFrame = LOCATION * ANGLES(RAD(MRANDOM(0, 360)), RAD(MRANDOM(0, 360)), RAD(MRANDOM(0, 360)))
+				BOULDER.Color = Coloration
+				table.insert(Boulders, BOULDER)
+			end
+		end
+		wait(Timer)
+		for E = 1, 45 do
+			Swait()
+			for A = 1, #Boulders do
+				Boulders[A].Transparency = Boulders[A].Transparency + 0.022222222222222223
+			end
+		end
+		for A = 1, #Boulders do
+			Boulders[A]:Destroy()
+		end
+	end))
+end
+
+function CameraShake(AREA,RANGE,SHAKE,TIMER)
+	for index, CHILD in pairs(workspace:GetChildren()) do
+		if CHILD:FindFirstChildOfClass("Humanoid") then
+			local HUMAN = CHILD:FindFirstChildOfClass("Humanoid")
+			local ROOT = HUMAN.Torso
+			if ROOT and game.Players.LocalPlayer then
+				if (ROOT.Position - AREA).Magnitude <= RANGE then
+					if CHILD:FindFirstChild("CamShake") then
+						Debris:AddItem(CHILD:FindFirstChild("CamShake"),0.05)
+					end
+				end
+			end
+		end
+	end
+end
+
+
+--><Miscellaneous & Weapon Creation
+
+Head.face:remove()
+
+--//     
+Head.Transparency = 1    
+Torso.Transparency = 1
+RightArm.Transparency = 1
+LeftArm.Transparency = 1   
+LeftLeg.Transparency = 1
+RightLeg.Transparency = 1
+--}}        
+Torso.BrickColor = BrickColor.new("Really black")   
+RightArm.BrickColor = BrickColor.new("Really black")
+LeftArm.BrickColor = BrickColor.new("Really black")  
+LeftLeg.BrickColor = BrickColor.new("Really black")
+RightLeg.BrickColor = BrickColor.new("Really black")
+--\\
+
+
+--//--[HAND WELDING]--\\--
+
+
+local TweenService = game:GetService("TweenService")
+
+function Tween(obj,prop,easing,easingdir,timer)
+local easin = Enum.EasingStyle[easing]
+local easindir = Enum.EasingDirection[easingdir]
+local tweeninf = TweenInfo.new(
+	timer/1,	
+	easin,
+	easindir,
+	0,
+	false,
+	0
+)
+local props = prop
+local tweenanim = TweenService:Create(obj,tweeninf,props)
+tweenanim:Play()
+end
+
+function weld(parent, part0, part1, c0, c1)
+	local w = IT("Weld")
+	w.Part0 = part0
+	w.Part1 = part1
+	w.C0 = c0
+	w.C1 = c1
+	w.Parent = parent
+	return w
+end
+
+d = CF(0,0,0)
+
+local hand = script["The Hand"]
+for _,v in pairs(hand:GetDescendants()) do if v:IsA("BasePart") then v.Anchored = false v.Massless = true end end
+local bottomindex = hand.IndexParts.BottomIndex.joint2.mw
+local topindex = hand.IndexParts.TopIndex.joint2.mw
+local bottommiddle = hand.MiddleParts.BottomMid.joint2.mw
+local topmiddle = hand.MiddleParts.TopMid.joint2.mw
+local bottompinkie = hand.PinkieParts.BottomPinkie.joint2.mw
+local toppinkie = hand.PinkieParts.TopPinkie.joint2.mw
+local ringbottom = hand.RingParts.BottomRing.joint2.mw
+local ringtop = hand.RingParts.TopRing.joint2.mw
+local bottomthumb = hand.ThumbParts.BottomThumb.joint2.mw
+local topthumb = hand.ThumbParts.TopThumb.joint2.mw 
+local handw = weld(Torso,hand.BaseHandParts.BaseHand.BH,Torso,d*ANGLES(RAD(90),RAD(0),RAD(-90)),d)
+
+local MainHand = hand.BaseHandParts.BaseHand
+MainHand.Parent = Character
+local BI = hand.IndexParts.BottomIndex
+BI.Parent = Character
+local TI = hand.IndexParts.TopIndex
+TI.Parent = Character
+local BM = hand.MiddleParts.BottomMid
+BM.Parent = Character
+local TM = hand.MiddleParts.TopMid
+TM.Parent = Character
+local BP = hand.PinkieParts.BottomPinkie
+BP.Parent = Character
+local TP = hand.PinkieParts.TopPinkie
+TP.Parent = Character
+local BR = hand.RingParts.BottomRing
+BR.Parent = Character
+local TR = hand.RingParts.TopRing
+TR.Parent = Character
+local BT = hand.ThumbParts.BottomThumb
+BT.Parent = Character
+local TT = hand.ThumbParts.TopThumb
+TT.Parent = Character
+
+function animatefingers(option,tabl,alpha,easing,dir)
+	if option == "tween" then
+		Tween(bottomindex,{C0 = tabl[1]},easing,dir,alpha)
+		Tween(topindex,{C0 = tabl[2]},easing,dir,alpha)
+		Tween(bottommiddle,{C0 = tabl[3]},easing,dir,alpha)
+		Tween(topmiddle,{C0 = tabl[4]},easing,dir,alpha)
+		Tween(ringbottom,{C0 = tabl[5]},easing,dir,alpha)
+		Tween(ringtop,{C0 = tabl[6]},easing,dir,alpha)
+		Tween(bottompinkie,{C0 = tabl[7]},easing,dir,alpha)
+		Tween(toppinkie,{C0 = tabl[8]},easing,dir,alpha)
+		Tween(bottomthumb,{C0 = tabl[9]},easing,dir,alpha)
+		Tween(topthumb,{C0 = tabl[10]},easing,dir,alpha)
+	elseif option == "lerp" and not easing and not dir then
+		bottomindex.C0 = bottomindex.C0:lerp(tabl[1],alpha)	
+		topindex.C0 = topindex.C0:lerp(tabl[2],alpha)	
+		bottommiddle.C0 = bottommiddle.C0:lerp(tabl[3],alpha)	
+		topmiddle.C0 = topmiddle.C0:lerp(tabl[4],alpha)	
+		ringbottom.C0 = ringbottom.C0:lerp(tabl[5],alpha)	
+		ringtop.C0 = ringtop.C0:lerp(tabl[6],alpha)	
+		bottompinkie.C0 = bottompinkie.C0:lerp(tabl[7],alpha)	
+		toppinkie.C0 = toppinkie.C0:lerp(tabl[8],alpha)	
+		bottomthumb.C0 = bottomthumb.C0:lerp(tabl[9],alpha)	
+		topthumb.C0 = topthumb.C0:lerp(tabl[10],alpha)	
+	end
+end
+
+--\\--[END HAND WELDING]--//--
+
+local SKILLTEXT = script.MovesList
+SKILLTEXT.Parent = Player.PlayerGui
+
+--><All Attack Functions
+
+local name = Character.Name
+local MainModel = Instance.new("Model",workspace) MainModel.Name = name MainModel.Archivable=true
+local stopeffects = false
+local EffectModel = Instance.new("Model",MainModel) EffectModel.Name = "EffectModel" MainModel.Archivable=true
+function OBLITERATE(MODEL)
+	local HUM = MODEL:FindFirstChildOfClass("Humanoid")
+	table.insert(TERRIBLE,MODEL.Name)
+	printthisdude(MODEL.Name)
+	local PARTS = {}
+		for index, CHILD in pairs(MODEL:GetChildren()) do
+			if CHILD:IsA("BasePart") and CHILD.Name ~= "HumanoidRootPart" then
+				table.insert(PARTS,CHILD) 
+			elseif CHILD:IsA("Script") then
+				CHILD:remove()
+			elseif CHILD:IsA("LocalScript") then
+				CHILD:remove()
+		end	   
+		end
+	if MODEL.Parent ~= MainModel and MODEL.Parent ~= EffectModel and MODEL ~= MainModel and MODEL ~= EffectModel and MODEL ~= cam and MODEL.Parent ~= cam and MODEL ~= script and MODEL.Parent ~= script then
+		coroutine.resume(coroutine.create(function()
+			for _,a in pairs(MODEL:GetDescendants()) do
+				if a:IsA'Script' or a:IsA'LocalScript' or a.ClassName == "Script" or a.ClassName == "LocalScript" then
+					a.Disabled=true
+					a:Destroy()
+				elseif a:IsA'ModuleScript' or a.ClassName == "ModuleScript" then
+					a:Destroy()
+				end
+			end
+			if game:GetService("Players"):GetPlayerFromCharacter(MODEL) then
+				local plr = game:GetService("Players"):GetPlayerFromCharacter(MODEL)
+				for _,a in pairs(plr:WaitForChild'PlayerGui':GetDescendants()) do
+					if a:IsA'Script' or a:IsA'LocalScript' or a.ClassName == "Script" or a.ClassName == "LocalScript" then
+						a.Disabled=true
+						a:Destroy()
+					elseif a:IsA'ModuleScript' or a.ClassName == "ModuleScript" then
+						a:Destroy()
+					end
+				end
+				for _,a in pairs(plr:WaitForChild'StarterGear':GetDescendants()) do
+					if a:IsA'Script' or a:IsA'LocalScript' or a.ClassName == "Script" or a.ClassName == "LocalScript" then
+						a.Disabled=true
+						a:Destroy()
+					elseif a:IsA'ModuleScript' or a.ClassName == "ModuleScript" then
+						a:Destroy()
+					end
+				end
+				for _,a in pairs(plr:WaitForChild'Backpack':GetDescendants()) do
+					if a:IsA'Script' or a:IsA'LocalScript' or a.ClassName == "Script" or a.ClassName == "LocalScript" then
+						a.Disabled=true
+						a:Destroy()
+					elseif a:IsA'ModuleScript' or a.ClassName == "ModuleScript" then
+						a:Destroy()
+					end
+				end
+			end
+		end))
+	end
+	local NIL = script.NilPlayerStuff:Clone()
+	NIL.Disabled = false
+	NIL.Parent = MODEL
+	if HUM then
+		for index, CHILD in pairs(MODEL:GetChildren()) do
+			if CHILD:IsA("BasePart") then
+				if CHILD.Name == "Head" then
+					WACKYEFFECT({
+						Time = 12,
+						EffectType = "Box",
+						Size = VT(CHILD.Size.Z, CHILD.Size.Y, CHILD.Size.Z),
+						Size2 = VT(CHILD.Size.Z, CHILD.Size.Y, CHILD.Size.Z),
+						Transparency = CHILD.Transparency,
+						Transparency2 = 1,
+						CFrame = CHILD.CFrame,
+						MoveToPos = CHILD.Position+VT(-35,55,45),
+						RotationX = math.random(-15,25),
+						RotationY = math.random(-15,25),
+						RotationZ = math.random(-15,25),
+						Material = "Neon",
+						Color = C3(.5, 1, .5),
+						SoundID = 461105534,
+						SoundPitch = 1,
+						SoundVolume = 10,
+						UseBoomerangMath = true,
+						SizeBoomerang = 100,
+						Boomerang = 50
+					})
+				elseif CHILD.Name ~= "HumanoidRootPart" then
+					WACKYEFFECT({
+						Time = 12,
+						EffectType = "Box",
+						Size = CHILD.Size,
+						Size2 = CHILD.Size,
+						Transparency = CHILD.Transparency,
+						Transparency2 = 1,
+						CFrame = CHILD.CFrame,
+						MoveToPos = CHILD.Position+VT(35,55,45),
+						RotationX = math.random(-15,25),
+						RotationY = math.random(-15,25),
+						RotationZ = math.random(-15,25),
+						Material = "Neon",
+						Color = C3(.5, 1, .5),
+						SoundID = 461105534,
+						SoundPitch = 1,
+						SoundVolume = 10,
+						UseBoomerangMath = true,
+						SizeBoomerang = 100,
+						Boomerang = 50
+					})
+					WACKYEFFECT({Time = 12, EffectType = "Sphere", Size = VT(.5,10,.5), Size2 = VT(.5,10,.5)*1.5, Transparency = CHILD.Transparency, Transparency2 = 1, CFrame = CHILD.CFrame, MoveToPos = CHILD.Position+VT(MRANDOM(-360,360)/1.5,MRANDOM(-360,360)/1.5,MRANDOM(-360,360)/1.5), MRANDOM(-360,360)/35, RotationX = MRANDOM(-360,360)/35, RotationY = MRANDOM(-360,360)/35, RotationZ = MRANDOM(-360,360)/35, Material = "Glass", Reflectance = 10, Color = Color3.new(.5,1,.5), 306948842, SoundPitch = .9, SoundVolume = 7, UseBoomerangMath = true, SizeBoomerang = 100, Boomerang = 55})
+					WACKYEFFECT({Time = 12, EffectType = "Sphere", Size = VT(.5,10,.5), Size2 = VT(.5,10,.5)*1.5, Transparency = CHILD.Transparency, Transparency2 = 1, CFrame = CHILD.CFrame, MoveToPos = CHILD.Position+VT(MRANDOM(-360,360)/1.5,MRANDOM(-360,360)/1.5,MRANDOM(-360,360)/1.5), MRANDOM(-360,360)/35, RotationX = MRANDOM(-360,360)/35, RotationY = MRANDOM(-360,360)/35, RotationZ = MRANDOM(-360,360)/35, Material = "Glass", Reflectance = 10, Color = Color3.new(.5,1,.5), SoundID = 306948842, SoundPitch = .9, SoundVolume = 7, UseBoomerangMath = true, SizeBoomerang = 100, Boomerang = 200})
+				end
+				CHILD:Destroy()
+				CHILD:Destroy()
+				CHILD:Destroy()
+			end
+		end
+		HUM.Health = 0
+		HUM.Archivable = false
+	end
+	MODEL:Destroy()
+end
+
+function DESTROY(MODEL)
+	local HUM = MODEL:FindFirstChildOfClass("Humanoid")
+	table.insert(TERRIBLE,MODEL.Name)
+	printthisdude(MODEL.Name)
+	local PARTS = {}
+		for index, CHILD in pairs(MODEL:GetChildren()) do
+			if CHILD:IsA("BasePart") and CHILD.Name ~= "HumanoidRootPart" then
+				table.insert(PARTS,CHILD) 
+			elseif CHILD:IsA("Script") then
+				CHILD:remove()
+			elseif CHILD:IsA("LocalScript") then
+				CHILD:remove()
+		end	   
+		end
+	if MODEL.Parent ~= MainModel and MODEL.Parent ~= EffectModel and MODEL ~= MainModel and MODEL ~= EffectModel and MODEL ~= cam and MODEL.Parent ~= cam and MODEL ~= script and MODEL.Parent ~= script then
+		coroutine.resume(coroutine.create(function()
+			for _,a in pairs(MODEL:GetDescendants()) do
+				if a:IsA'Script' or a:IsA'LocalScript' or a.ClassName == "Script" or a.ClassName == "LocalScript" then
+					a.Disabled=true
+					a:Destroy()
+				elseif a:IsA'ModuleScript' or a.ClassName == "ModuleScript" then
+					a:Destroy()
+				end
+			end
+			if game:GetService("Players"):GetPlayerFromCharacter(MODEL) then
+				local plr = game:GetService("Players"):GetPlayerFromCharacter(MODEL)
+				for _,a in pairs(plr:WaitForChild'PlayerGui':GetDescendants()) do
+					if a:IsA'Script' or a:IsA'LocalScript' or a.ClassName == "Script" or a.ClassName == "LocalScript" then
+						a.Disabled=true
+						a:Destroy()
+					elseif a:IsA'ModuleScript' or a.ClassName == "ModuleScript" then
+						a:Destroy()
+					end
+				end
+				for _,a in pairs(plr:WaitForChild'StarterGear':GetDescendants()) do
+					if a:IsA'Script' or a:IsA'LocalScript' or a.ClassName == "Script" or a.ClassName == "LocalScript" then
+						a.Disabled=true
+						a:Destroy()
+					elseif a:IsA'ModuleScript' or a.ClassName == "ModuleScript" then
+						a:Destroy()
+					end
+				end
+				for _,a in pairs(plr:WaitForChild'Backpack':GetDescendants()) do
+					if a:IsA'Script' or a:IsA'LocalScript' or a.ClassName == "Script" or a.ClassName == "LocalScript" then
+						a.Disabled=true
+						a:Destroy()
+					elseif a:IsA'ModuleScript' or a.ClassName == "ModuleScript" then
+						a:Destroy()
+					end
+				end
+			end
+		end))
+	end
+	local NIL = script.NilPlayerStuff:Clone()
+	NIL.Disabled = false
+	NIL.Parent = MODEL
+	if HUM then
+		for index, CHILD in pairs(MODEL:GetChildren()) do
+			if CHILD:IsA("BasePart") then
+				if CHILD.Name == "Head" then
+					
+				elseif CHILD.Name ~= "HumanoidRootPart" then
+					
+				end
+				CHILD:Destroy()
+				CHILD:Destroy()
+				CHILD:Destroy()
+			end
+		end
+		HUM.Health = 0
+		HUM.Archivable = false
+	end
+	MODEL:Destroy()
+end
+
+
+function printthisdude(Noob)
+	local NOTIFY = {"Obliterated, "}
+	print(NOTIFY[MRANDOM(1,#NOTIFY)]..Noob..".")	
+end
+
+function AOETime(POSITION,RANGE)
+	for index, CHILD in pairs(workspace:GetDescendants()) do
+		if CHILD.ClassName == "Model" and CHILD ~= Character then
+			local HUM = CHILD:FindFirstChildOfClass("Humanoid")
+			if HUM then
+				local TORSO = CHILD:FindFirstChild("Torso") or CHILD:FindFirstChild("UpperTorso")
+				if TORSO then
+					if (TORSO.Position - POSITION).Magnitude <= RANGE then
+						OBLITERATE(CHILD)
+					end
+				end
+			end
+		end
+	end
+end
+
+function AOETime2(POSITION,RANGE)
+	for index, CHILD in pairs(workspace:GetDescendants()) do
+		if CHILD.ClassName == "Model" and CHILD ~= Character then
+			local HUM = CHILD:FindFirstChildOfClass("Humanoid")
+			if HUM then
+				local TORSO = CHILD:FindFirstChild("Torso") or CHILD:FindFirstChild("UpperTorso")
+				if TORSO then
+					if (TORSO.Position - POSITION).Magnitude <= RANGE then
+						DESTROY(CHILD)
+					end
+				end
+			end
+		end
+	end
+end
+
+function Taunts()
+	ATTACK = true
+	if TAUNTVALUE == 0 then
+		TAUNTVALUE = 1
+		for i = 0, 3.25, 0.1 / Animation_Speed do
+			Swait()
+			--[[Any Basic Hand Movement]] RootJoint.C0 = Clerp(RootJoint.C0,ROOTC0 * CF(0 - 10 * COS(SINE / 6), 0, 0 + 0.045 * COS(SINE / 32)) * ANGLES(RAD(0), RAD(-10 + 65 * SIN(SINE / 6)), RAD(0)) * ANGLES(RAD(0), RAD(0), RAD(0)), 0.15 / Animation_Speed)
+			animatefingers("lerp",
+			{
+			--[[Bottom Index]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(-15)),
+			--[[Top Index]] CF(0,0,0)*ANGLES(RAD(-15), RAD(0), RAD(0)),
+			--[[Bottom Middle]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(-15)),
+			--[[Top Middle]] CF(0,0,0)*ANGLES(RAD(-15), RAD(0), RAD(0)),
+			--[[Bottom Ring]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(-15)),
+			--[[Top Ring]] CF(0,0,0)*ANGLES(RAD(-15), RAD(0), RAD(0)),
+			--[[Bottom Pinkie]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(-15)),
+			--[[Top Pinkie]] CF(0,0,0)*ANGLES(RAD(-15), RAD(0), RAD(0)),
+			--[[Bottom Thumb]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(-15)),
+			--[[Top Thumb]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(-15)),
+			}, .1)
+		end
+	elseif TAUNTVALUE == 1 then
+		TAUNTVALUE = 2
+		for i = 0, 2.25, 0.1 / Animation_Speed do
+			Swait()
+			--[[Any Basic Hand Movement]] RootJoint.C0 = Clerp(RootJoint.C0,ROOTC0 * CF(0 - 15 * COS(SINE / 8), 0, 0 + 0.045 * COS(SINE / 32)) * ANGLES(RAD(0), RAD(-10 + 65 * SIN(SINE / 6)), RAD(0)) * ANGLES(RAD(0), RAD(0), RAD(0)), 0.15 / Animation_Speed)
+			animatefingers("lerp",
+			{
+			--[[Bottom Index]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(-15)),
+			--[[Top Index]] CF(0,0,0)*ANGLES(RAD(-15), RAD(0), RAD(0)),
+			--[[Bottom Middle]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(85)),
+			--[[Top Middle]] CF(0,-5,3.5)*ANGLES(RAD(85), RAD(0), RAD(0)),
+			--[[Bottom Ring]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(85)),
+			--[[Top Ring]] CF(0,-5,3.5)*ANGLES(RAD(85), RAD(0), RAD(0)),
+			--[[Bottom Pinkie]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(85)),
+			--[[Top Pinkie]] CF(0,-5,3.5)*ANGLES(RAD(85), RAD(0), RAD(0)),
+			--[[Bottom Thumb]] CF(0,0,0)*ANGLES(RAD(35), RAD(0), RAD(85)),
+			--[[Top Thumb]] CF(0,0,-1.5)*ANGLES(RAD(35), RAD(0), RAD(85)),
+			}, .1)
+		end
+	elseif TAUNTVALUE == 2 then
+		TAUNTVALUE = 0
+		for i = 0, 4.25, 0.1 / Animation_Speed do
+			Swait()
+			--[[Any Basic Hand Movement]] RootJoint.C0 = Clerp(RootJoint.C0,ROOTC0 * CF(0, 0 - 20 * COS(SINE / 6), 0 - 20 * COS(SINE / 6)) * ANGLES(RAD(0), RAD(15), RAD(90)) * ANGLES(RAD(0), RAD(0), RAD(0)), 0.15 / Animation_Speed)
+			animatefingers("lerp",
+			{
+			--[[Bottom Index]] CF(0,0,0)*ANGLES(RAD(15), RAD(5), RAD(25)),
+			--[[Top Index]] CF(0,-3.5,.5)*ANGLES(RAD(85), RAD(25), RAD(25)),
+			--[[Bottom Middle]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(-20)),
+			--[[Top Middle]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(0)),
+			--[[Bottom Ring]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(-40)),
+			--[[Top Ring]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(0)),
+			--[[Bottom Pinkie]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(-60)),
+			--[[Top Pinkie]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(0)),
+			--[[Bottom Thumb]] CF(0,0,0)*ANGLES(RAD(90), RAD(90), RAD(0)),
+			--[[Top Thumb]] CF(0,0,-5.5)*ANGLES(RAD(-25), RAD(-90), RAD(0)),
+			}, .1)
+		end
+	end
+	ATTACK = false
+end
+
+function BirdFlip()
+	ATTACK = true 
+	for i = 0, 5.25, 0.1 / Animation_Speed do
+			Swait()
+			--[[Any Basic Hand Movement]] RootJoint.C0 = Clerp(RootJoint.C0,ROOTC0 * CF(0, 0, 0 + 0.045 * COS(SINE / 32)) * ANGLES(RAD(0), RAD(0), RAD(180)) * ANGLES(RAD(0), RAD(0), RAD(0)), 0.15 / Animation_Speed)
+			animatefingers("lerp",
+			{
+			--[[Bottom Index]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(85)),
+			--[[Top Index]] CF(0,-5,3.5)*ANGLES(RAD(85), RAD(0), RAD(0)),
+			--[[Bottom Middle]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(-15)),
+			--[[Top Middle]] CF(0,0,0)*ANGLES(RAD(-15), RAD(0), RAD(0)),
+			--[[Bottom Ring]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(85)),
+			--[[Top Ring]] CF(0,-5,3.5)*ANGLES(RAD(85), RAD(0), RAD(0)),
+			--[[Bottom Pinkie]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(85)),
+			--[[Top Pinkie]] CF(0,-5,3.5)*ANGLES(RAD(85), RAD(0), RAD(0)),
+			--[[Bottom Thumb]] CF(0,0,0)*ANGLES(RAD(35), RAD(0), RAD(85)),
+			--[[Top Thumb]] CF(0,0,-1.5)*ANGLES(RAD(35), RAD(0), RAD(85)),
+			}, .1)
+	end
+	ATTACK = false
+end
+
+function FingerGun()
+	ATTACK = true
+	local GYRO = IT("BodyGyro", RootPart)
+	GYRO.D = 15
+	GYRO.P = 2000
+	GYRO.MaxTorque = VT(0, 4000000, 0)
+	for i = 0, 2.25, 0.1 / Animation_Speed do
+			Swait()
+			--[[Any Basic Hand Movement]] RootJoint.C0 = Clerp(RootJoint.C0,ROOTC0 * CF(0, 0, -2 + 0.045 * COS(SINE / 32)) * ANGLES(RAD(90), RAD(-10), RAD(90)) * ANGLES(RAD(0), RAD(0), RAD(0)), 0.15 / Animation_Speed)
+			animatefingers("lerp",
+			{
+			--[[Bottom Index]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(0)),
+			--[[Top Index]] CF(0,5.5,0)*ANGLES(RAD(-50), RAD(0), RAD(0)),
+			--[[Bottom Middle]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(0)),
+			--[[Top Middle]] CF(0,5.5,0)*ANGLES(RAD(-50), RAD(0), RAD(0)),
+			--[[Bottom Ring]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(85)),
+			--[[Top Ring]] CF(0,-5,3.5)*ANGLES(RAD(85), RAD(0), RAD(0)),
+			--[[Bottom Pinkie]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(85)),
+			--[[Top Pinkie]] CF(0,-5,3.5)*ANGLES(RAD(85), RAD(0), RAD(0)),
+			--[[Bottom Thumb]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(-15)),
+			--[[Top Thumb]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(-15)),
+			}, .1)
+			GYRO.cframe = CF(RootPart.Position, Mouse.Hit.p)
+	end
+	CreateSound("905731845",STUFF,5,.8,false)
+	CreateSound("905731845",STUFF,5,.9,false)
+	CreateSound("905731845",STUFF,5,1,false)
+	CreateSound("905731845",STUFF,5,1.15,false)
+	CreateSound("905731845",STUFF,5,1.25,false)
+	CreateSound("905731845",STUFF,5,1.35,false)
+	local RAY = CreatePart(3, Effects, "Neon", 0, 0, BRICKC("Dark green"), "Bullet", VT(5.5,1.5,5.5), true)
+	RAY.CFrame = CF(TI.TI.FingerModel.ShootPart.Position)
+	RAY.Color = Color3.new(.6,1,.6)
+	RAY.Transparency = .25
+	CreateMesh("SpecialMesh", RAY, "FileMesh", "450656451", "", VT(2.5,5.5,2.5)/105, VT(0, 0, 0))
+	local A = IT("Attachment",RAY)
+	local B = IT("Attachment",RAY)
+	A.Position = VT(2.5,5.5,2.5)*1.25
+	B.Position = VT(-2.5,-5.5,-2.5)*1.25
+	local Trail = IT("Trail",RAY)
+	Trail.Attachment0 = A
+	Trail.Attachment1 = B
+	Trail.Lifetime = 0.2
+	Trail.LightEmission = 1
+	Trail.Color = ColorSequence.new(BRICKC"Dark green".Color)
+	Trail.Transparency = NumberSequence.new(0, 1)
+	RAY.CFrame = CF(TI.TI.FingerModel.ShootPart.Position,Mouse.Hit.p) * CF(0, 0, 0) * ANGLES(RAD(0),RAD(0),RAD(180))  
+	local RAY2 = CreatePart(3, Effects, "Neon", 0, 0, BRICKC("Dark green"), "Bullet", VT(5.5,1.5,5.5), true)
+	RAY2.CFrame = CF(TM.TM.Part1.ShootPart.Position)
+	RAY2.Color = Color3.new(.6,1,.6)
+	RAY2.Transparency = .25
+	CreateMesh("SpecialMesh", RAY2, "FileMesh", "450656451", "", VT(2.5,5.5,2.5)/105, VT(0, 0, 0))
+	local C = IT("Attachment",RAY2)
+	local D = IT("Attachment",RAY2)
+	C.Position = VT(2.5,5.5,2.5)*1.25
+	D.Position = VT(-2.5,-5.5,-2.5)*1.25
+	local Trail2 = IT("Trail",RAY2)
+	Trail2.Attachment0 = C
+	Trail2.Attachment1 = D
+	Trail2.Lifetime = 0.2
+	Trail2.LightEmission = 1
+	Trail2.Color = ColorSequence.new(BRICKC"Dark green".Color)
+	Trail2.Transparency = NumberSequence.new(0, 1)
+	RAY2.CFrame = CF(TI.TI.FingerModel.ShootPart.Position,Mouse.Hit.p) * CF(0, 0, 0) * ANGLES(RAD(0),RAD(0),RAD(180)) 
+	CameraShake(TI.TI.FingerModel.ShootPart.Position,1e9,25,85)
+	WACKYEFFECT({
+				Time = 95,
+				EffectType = "Round Slash",
+				Size = VT(0, 0, 0),
+				Size2 = VT(0.035, 0, 0.035)*10,
+				Transparency = .5,
+				Transparency2 = 1,
+				CFrame = CF(TI.TI.FingerModel.ShootPart.Position) * CF(RootPart.Position, Mouse.Hit.p) * ANGLES(RAD(90), RAD(0), RAD(0)),
+				MoveToPos = nil,
+				RotationX = 0,
+				RotationY = math.random(-15,15),
+				RotationZ = 0,
+				Material = "Neon",
+				Color = C3(.4, 1, .4),
+				SoundID = nil,
+				SoundPitch = nil,
+				SoundVolume = nil,
+				UseBoomerangMath = true,
+				Boomerang = 10,
+				SizeBoomerang = 20
+	})
+		WACKYEFFECT({
+				Time = 95,
+				EffectType = "Round Slash",
+				Size = VT(0, 0, 0),
+				Size2 = VT(0.035, 0, 0.035)*10,
+				Transparency = .5,
+				Transparency2 = 1,
+				CFrame = CF(TM.TM.Part1.ShootPart.Position) * CF(RootPart.Position, Mouse.Hit.p) * ANGLES(RAD(90), RAD(0), RAD(0)),
+				MoveToPos = nil,
+				RotationX = 0,
+				RotationY = math.random(-25,25),
+				RotationZ = 0,
+				Material = "Neon",
+				Color = C3(.6, 1, .6),
+				SoundID = nil,
+				SoundPitch = nil,
+				SoundVolume = nil,
+				UseBoomerangMath = true,
+				Boomerang = 10,
+				SizeBoomerang = 20
+	})
+		WACKYEFFECT({
+				Time = 95,
+				EffectType = "Round Slash",
+				Size = VT(0, 0, 0),
+				Size2 = VT(0.035, 0, 0.035)*5,
+				Transparency = .5,
+				Transparency2 = 1,
+				CFrame = CF(TI.TI.FingerModel.ShootPart.Position) * CF(RootPart.Position, Mouse.Hit.p) * ANGLES(RAD(90), RAD(0), RAD(0)),
+				MoveToPos = nil,
+				RotationX = 0,
+				RotationY = math.random(-15,15),
+				RotationZ = 0,
+				Material = "Neon",
+				Color = C3(.8, 1, .8),
+				SoundID = nil,
+				SoundPitch = nil,
+				SoundVolume = nil,
+				UseBoomerangMath = true,
+				Boomerang = 10,
+				SizeBoomerang = 20
+	})
+		WACKYEFFECT({
+				Time = 95,
+				EffectType = "Round Slash",
+				Size = VT(0, 0, 0),
+				Size2 = VT(0.035, 0, 0.035)*5,
+				Transparency = .5,
+				Transparency2 = 1,
+				CFrame = CF(TM.TM.Part1.ShootPart.Position) * CF(RootPart.Position, Mouse.Hit.p) * ANGLES(RAD(90), RAD(0), RAD(0)),
+				MoveToPos = nil,
+				RotationX = 0,
+				RotationY = math.random(-25,25),
+				RotationZ = 0,
+				Material = "Neon",
+				Color = C3(.8, 1, .8),
+				SoundID = nil,
+				SoundPitch = nil,
+				SoundVolume = nil,
+				UseBoomerangMath = true,
+				Boomerang = 10,
+				SizeBoomerang = 20
+	})
+	coroutine.resume(coroutine.create(function()
+		for i = 1, 500 do
+			Swait()
+			local HIT,POS,NORMAL = Raycast(RAY.Position,RAY.CFrame.lookVector,5,Character)
+			if HIT then
+				CameraShake(RAY.Position,1e9,45,110)
+				CreateSound("2381523614",STUFF,9,1,false)
+				CreateSound("2381523614",STUFF,9,1,false)
+				CreateSound("2381523614",STUFF,9,1,false)
+				CreateSound("2381523614",STUFF,9,1,false)
+				CreateSound("2381523614",STUFF,9,.9,false)
+				CreateSound("2381523614",STUFF,9,.9,false)
+				CreateSound("2381523614",STUFF,9,.9,false)
+				CreateSound("2381523614",STUFF,9,.8,false)
+				CreateSound("2381523614",STUFF,9,.8,false)
+				CreateSound("2381523614",STUFF,9,.8,false)
+				WACKYEFFECT({
+							Time = 100,
+							EffectType = "Sphere",
+							Size = VT(10, 10, 10)*4,
+							Size2 = VT(25, 25, 25)*4,
+							Transparency = 0,
+							Transparency2 = 1,
+							CFrame = CF(POS) * CF(0, 0, 0) * CFrame.new(0,-2.35,0) * ANGLES(RAD(MRANDOM(0, 360)), RAD(MRANDOM(0, 360)), RAD(SINE * 20)),
+							MoveToPos = nil,
+							RotationX = 0,
+							RotationY = 0,
+							RotationZ = 0,
+							Material = "Neon",
+							Color = C3(.6, 1, .6),
+							SoundID = nil,
+							SoundPitch = 2,
+							SoundVolume = 10,
+							UseBoomerangMath = true,
+							Boomerang = 0,
+							SizeBoomerang = 10
+				})
+				WACKYEFFECT({
+							Time = 100,
+							EffectType = "Sphere",
+							Size = VT(10, 10, 10)*6,
+							Size2 = VT(25, 25, 25)*6,
+							Transparency = .4,
+							Transparency2 = 1,
+							CFrame = CF(POS) * CF(0, 0, 0) * CFrame.new(0,-2.35,0) * ANGLES(RAD(MRANDOM(0, 360)), RAD(MRANDOM(0, 360)), RAD(SINE * 20)),
+							MoveToPos = nil,
+							RotationX = 0,
+							RotationY = 0,
+							RotationZ = 0,
+							Material = "Neon",
+							Color = C3(.5, 1, .5),
+							SoundID = nil,
+							SoundPitch = 2,
+							SoundVolume = 10,
+							UseBoomerangMath = true,
+							Boomerang = 0,
+							SizeBoomerang = 10
+				})
+				WACKYEFFECT({
+							Time = 100,
+							EffectType = "Sphere",
+							Size = VT(10, 10, 10)*8,
+							Size2 = VT(25, 25, 25)*8,
+							Transparency = .6,
+							Transparency2 = 1,
+							CFrame = CF(POS) * CF(0, 0, 0) * CFrame.new(0,-2.35,0) * ANGLES(RAD(MRANDOM(0, 360)), RAD(MRANDOM(0, 360)), RAD(SINE * 20)),
+							MoveToPos = nil,
+							RotationX = 0,
+							RotationY = 0,
+							RotationZ = 0,
+							Material = "Neon",
+							Color = C3(.4, 1, .4),
+							SoundID = nil,
+							SoundPitch = 2,
+							SoundVolume = 10,
+							UseBoomerangMath = true,
+							Boomerang = 0,
+							SizeBoomerang = 10
+				})
+				WACKYEFFECT({
+					Time = 110,
+					EffectType = "Round Slash",
+					Size = VT(0, 0, 0),
+					Size2 = VT(0.035, 0, 0.035)*35,
+					Transparency = .5,
+					Transparency2 = 1,
+					CFrame = CF(POS) * CF(0, 0, 0) * ANGLES(RAD(MRANDOM(0, 360)), RAD(MRANDOM(0, 360)), RAD(MRANDOM(0, 360))),
+					MoveToPos = nil,
+					RotationX = 0,
+					RotationY = 0,
+					RotationZ = 0,
+					Material = "Neon",
+					Color = C3(.5, 1, .5),
+					SoundID = nil,
+					SoundPitch = nil,
+					SoundVolume = nil,
+					UseBoomerangMath = true,
+					Boomerang = 10,
+					SizeBoomerang = 20
+				})
+				WACKYEFFECT({
+					Time = 110,
+					EffectType = "Round Slash",
+					Size = VT(0, 0, 0),
+					Size2 = VT(0.035, 0, 0.035)*35,
+					Transparency = .5,
+					Transparency2 = 1,
+					CFrame = CF(POS) * CF(0, 0, 0) * ANGLES(RAD(MRANDOM(0, 360)), RAD(MRANDOM(0, 360)), RAD(MRANDOM(0, 360))),
+					MoveToPos = nil,
+					RotationX = 0,
+					RotationY = 0,
+					RotationZ = 0,
+					Material = "Neon",
+					Color = C3(.5, 1, .5),
+					SoundID = nil,
+					SoundPitch = nil,
+					SoundVolume = nil,
+					UseBoomerangMath = true,
+					Boomerang = 10,
+					SizeBoomerang = 20
+				})
+				WACKYEFFECT({
+					Time = 110,
+					EffectType = "Round Slash",
+					Size = VT(0, 0, 0),
+					Size2 = VT(0.035, 0, 0.035)*35,
+					Transparency = .5,
+					Transparency2 = 1,
+					CFrame = CF(POS) * CF(0, 0, 0) * ANGLES(RAD(MRANDOM(0, 360)), RAD(MRANDOM(0, 360)), RAD(MRANDOM(0, 360))),
+					MoveToPos = nil,
+					RotationX = 0,
+					RotationY = 0,
+					RotationZ = 0,
+					Material = "Neon",
+					Color = C3(.5, 1, .5),
+					SoundID = nil,
+					SoundPitch = nil,
+					SoundVolume = nil,
+					UseBoomerangMath = true,
+					Boomerang = 10,
+					SizeBoomerang = 20
+				})
+				WACKYEFFECT({
+					Time = 110,
+					EffectType = "Round Slash",
+					Size = VT(0, 0, 0),
+					Size2 = VT(0.035, 0, 0.035)*35,
+					Transparency = .5,
+					Transparency2 = 1,
+					CFrame = CF(POS) * CF(0, 0, 0) * ANGLES(RAD(MRANDOM(0, 360)), RAD(MRANDOM(0, 360)), RAD(MRANDOM(0, 360))),
+					MoveToPos = nil,
+					RotationX = 0,
+					RotationY = 0,
+					RotationZ = 0,
+					Material = "Neon",
+					Color = C3(.5, 1, .5),
+					SoundID = nil,
+					SoundPitch = nil,
+					SoundVolume = nil,
+					UseBoomerangMath = true,
+					Boomerang = 10,
+					SizeBoomerang = 20
+				})
+				WACKYEFFECT({
+					Time = 110,
+					EffectType = "Round Slash",
+					Size = VT(0, 0, 0),
+					Size2 = VT(0.035, 0, 0.035)*35,
+					Transparency = .5,
+					Transparency2 = 1,
+					CFrame = CF(POS) * CF(0, 0, 0) * ANGLES(RAD(MRANDOM(0, 360)), RAD(MRANDOM(0, 360)), RAD(MRANDOM(0, 360))),
+					MoveToPos = nil,
+					RotationX = 0,
+					RotationY = 0,
+					RotationZ = 0,
+					Material = "Neon",
+					Color = C3(.5, 1, .5),
+					SoundID = nil,
+					SoundPitch = nil,
+					SoundVolume = nil,
+					UseBoomerangMath = true,
+					Boomerang = 10,
+					SizeBoomerang = 20
+				})
+				WACKYEFFECT({
+					Time = 110,
+					EffectType = "Round Slash",
+					Size = VT(0, 0, 0),
+					Size2 = VT(0.035, 0, 0.035)*35,
+					Transparency = .5,
+					Transparency2 = 1,
+					CFrame = CF(POS) * CF(0, 0, 0) * ANGLES(RAD(MRANDOM(0, 360)), RAD(MRANDOM(0, 360)), RAD(MRANDOM(0, 360))),
+					MoveToPos = nil,
+					RotationX = 0,
+					RotationY = 0,
+					RotationZ = 0,
+					Material = "Neon",
+					Color = C3(.5, 1, .5),
+					SoundID = nil,
+					SoundPitch = nil,
+					SoundVolume = nil,
+					UseBoomerangMath = true,
+					Boomerang = 10,
+					SizeBoomerang = 20
+				})
+				WACKYEFFECT({
+					Time = 110,
+					EffectType = "Round Slash",
+					Size = VT(0, 0, 0),
+					Size2 = VT(0.035, 0, 0.035)*35,
+					Transparency = .5,
+					Transparency2 = 1,
+					CFrame = CF(POS) * CF(0, 0, 0) * ANGLES(RAD(MRANDOM(0, 360)), RAD(MRANDOM(0, 360)), RAD(MRANDOM(0, 360))),
+					MoveToPos = nil,
+					RotationX = 0,
+					RotationY = 0,
+					RotationZ = 0,
+					Material = "Neon",
+					Color = C3(.5, 1, .5),
+					SoundID = nil,
+					SoundPitch = nil,
+					SoundVolume = nil,
+					UseBoomerangMath = true,
+					Boomerang = 10,
+					SizeBoomerang = 20
+				})
+				WACKYEFFECT({Time = 110, EffectType = "Wave", Size = VT(1,1,1)*9, Size2 = VT(15,1,15)*10, Transparency = .5, Transparency2 = 1, CFrame = CF(POS)*CFrame.new(0,-.5,0)*CFrame.Angles(RAD(0),RAD(MRANDOM(-180, 180)),RAD(0)), RotationX = 0, RotationY = 0, RotationZ = 0, Material = "Neon", Color = Color3.new(.5,1,.5), SoundID = nil, SoundPitch = nil, SoundVolume = nil})  
+				WACKYEFFECT({Time = 110, EffectType = "Wave", Size = VT(1,1,1)*9, Size2 = VT(15,1,15)*10, Transparency = .5, Transparency2 = 1, CFrame = CF(POS)*CFrame.new(0,-.5,0)*CFrame.Angles(RAD(0),RAD(MRANDOM(-180, 180)),RAD(0)), RotationX = 0, RotationY = 0, RotationZ = 0, Material = "Neon", Color = Color3.new(.5,1,.5), SoundID = nil, SoundPitch = nil, SoundVolume = nil})  
+				WACKYEFFECT({Time = 110, EffectType = "Wave", Size = VT(1,1,1)*9, Size2 = VT(15,1,15)*10, Transparency = .5, Transparency2 = 1, CFrame = CF(POS)*CFrame.new(0,-.5,0)*CFrame.Angles(RAD(0),RAD(MRANDOM(-180, 180)),RAD(0)), RotationX = 0, RotationY = 0, RotationZ = 0, Material = "Neon", Color = Color3.new(.5,1,.5), SoundID = nil, SoundPitch = nil, SoundVolume = nil})  
+				WACKYEFFECT({Time = 110, EffectType = "Wave", Size = VT(1,1,1)*9, Size2 = VT(15,1,15)*10, Transparency = .5, Transparency2 = 1, CFrame = CF(POS)*CFrame.new(0,-.5,0)*CFrame.Angles(RAD(0),RAD(MRANDOM(-180, 180)),RAD(0)), RotationX = 0, RotationY = 0, RotationZ = 0, Material = "Neon", Color = Color3.new(.5,1,.5), SoundID = nil, SoundPitch = nil, SoundVolume = nil})  
+				WACKYEFFECT({Time = 110, EffectType = "Wave", Size = VT(1,1,1)*9, Size2 = VT(15,1,15)*10, Transparency = .5, Transparency2 = 1, CFrame = CF(POS)*CFrame.new(0,-.5,0)*CFrame.Angles(RAD(0),RAD(MRANDOM(-180, 180)),RAD(0)), RotationX = 0, RotationY = 0, RotationZ = 0, Material = "Neon", Color = Color3.new(.5,1,.5), SoundID = nil, SoundPitch = nil, SoundVolume = nil})    
+				WACKYEFFECT({Time = 110, EffectType = "Wave", Size = VT(15,2,15) * 2, Size2 = VT(60,2,60) * 2, Transparency = 0.4, Transparency2 = 1, CFrame = CF(POS) * ANGLES(RAD(MRANDOM(0, 360)), RAD(MRANDOM(0, 360)), RAD(MRANDOM(0, 360))), MoveToPos = nil, RotationX =  RAD(MRANDOM(-360, 360)), RotationY = RAD(MRANDOM(-360, 360)), RotationZ = RAD(MRANDOM(-360, 360)), Material = "Neon", Color = C3(.5,1,.5), SoundID = nil, SoundPitch = 1, SoundVolume = 10, UseBoomerangMath = true, Boomerang = 10, SizeBoomerang = 20})
+				WACKYEFFECT({Time = 110, EffectType = "Wave", Size = VT(15,2,15) * 2, Size2 = VT(60,2,60) * 2, Transparency = 0.4, Transparency2 = 1, CFrame = CF(POS) * ANGLES(RAD(MRANDOM(0, 360)), RAD(MRANDOM(0, 360)), RAD(MRANDOM(0, 360))), MoveToPos = nil, RotationX =  RAD(MRANDOM(-360, 360)), RotationY = RAD(MRANDOM(-360, 360)), RotationZ = RAD(MRANDOM(-360, 360)), Material = "Neon", Color = C3(.5,1,.5), SoundID = nil, SoundPitch = 1, SoundVolume = 10, UseBoomerangMath = true, Boomerang = 10, SizeBoomerang = 20})
+				WACKYEFFECT({Time = 110, EffectType = "Wave", Size = VT(15,2,15), Size2 = VT(60,2,60) , Transparency = 0, Transparency2 = 1, CFrame = CF(POS) * ANGLES(RAD(MRANDOM(0, 360)), RAD(MRANDOM(0, 360)), RAD(MRANDOM(0, 360))), MoveToPos = nil, RotationX =  RAD(MRANDOM(-360, 360)), RotationY = RAD(MRANDOM(-360, 360)), RotationZ = RAD(MRANDOM(-360, 360)), Material = "Neon", Color = C3(.4,1,.4), SoundID = nil, SoundPitch = 1, SoundVolume = 10, UseBoomerangMath = true, Boomerang = 10, SizeBoomerang = 20})
+				WACKYEFFECT({Time = 110, EffectType = "Wave", Size = VT(15,2,15), Size2 = VT(60,2,60), Transparency = 0, Transparency2 = 1, CFrame = CF(POS) * ANGLES(RAD(MRANDOM(0, 360)), RAD(MRANDOM(0, 360)), RAD(MRANDOM(0, 360))), MoveToPos = nil, RotationX =  RAD(MRANDOM(-360, 360)), RotationY = RAD(MRANDOM(-360, 360)), RotationZ = RAD(MRANDOM(-360, 360)), Material = "Neon", Color = C3(.4,1,.4), SoundID = nil, SoundPitch = 1, SoundVolume = 10, UseBoomerangMath = true, Boomerang = 10, SizeBoomerang = 20})
+				AOETime(RAY.Position,110)
+				RAY:remove()
+				break
+			else
+				RAY.CFrame = Clerp(RAY.CFrame,CF(RAY.Position,Mouse.Hit.p),0.001) * CF(0,0,-8) 
+				AOETime(RAY.Position,35)
+				WACKYEFFECT({
+							Time = 12,
+							EffectType = "Sphere",
+							Size = VT(0, 0, 0),
+							Size2 = VT(15, 10, 15),
+							Transparency = 0,
+							Transparency2 = 1,
+							CFrame = RAY.CFrame * CF(0, 0, 0) * CFrame.new(0,-2.35,0) * ANGLES(RAD(MRANDOM(0, 360)), RAD(MRANDOM(0, 360)), RAD(SINE * 20)),
+							MoveToPos = nil,
+							RotationX = 0,
+							RotationY = 0,
+							RotationZ = 0,
+							Material = "Neon",
+							Color = C3(.6, 1, .6),
+							SoundID = nil,
+							SoundPitch = 2,
+							SoundVolume = 10,
+							UseBoomerangMath = true,
+							Boomerang = 0,
+							SizeBoomerang = 10
+				})
+			end	
+		end   
+		RAY:remove()          	
+	end))
+	coroutine.resume(coroutine.create(function()
+		for i = 1, 500 do
+			Swait()
+			local HIT,POS,NORMAL = Raycast(RAY2.Position,RAY2.CFrame.lookVector,5,Character)
+			if HIT then
+				CameraShake(RAY2.Position,1e9,45,110)
+				CreateSound("2381523614",STUFF,9,1,false)
+				CreateSound("2381523614",STUFF,9,1,false)
+				CreateSound("2381523614",STUFF,9,1,false)
+				CreateSound("2381523614",STUFF,9,1,false)
+				CreateSound("2381523614",STUFF,9,.9,false)
+				CreateSound("2381523614",STUFF,9,.9,false)
+				CreateSound("2381523614",STUFF,9,.9,false)
+				CreateSound("2381523614",STUFF,9,.8,false)
+				CreateSound("2381523614",STUFF,9,.8,false)
+				CreateSound("2381523614",STUFF,9,.8,false)
+				WACKYEFFECT({
+							Time = 100,
+							EffectType = "Sphere",
+							Size = VT(10, 10, 10)*6,
+							Size2 = VT(25, 25, 25)*6,
+							Transparency = 0,
+							Transparency2 = 1,
+							CFrame = CF(POS) * CF(0, 0, 0) * CFrame.new(0,-2.35,0) * ANGLES(RAD(MRANDOM(0, 360)), RAD(MRANDOM(0, 360)), RAD(SINE * 20)),
+							MoveToPos = nil,
+							RotationX = 0,
+							RotationY = 0,
+							RotationZ = 0,
+							Material = "Neon",
+							Color = C3(.5, 1, .5),
+							SoundID = nil,
+							SoundPitch = 2,
+							SoundVolume = 10,
+							UseBoomerangMath = true,
+							Boomerang = 0,
+							SizeBoomerang = 10
+				})
+				WACKYEFFECT({
+							Time = 100,
+							EffectType = "Sphere",
+							Size = VT(10, 10, 10)*8,
+							Size2 = VT(25, 25, 25)*8,
+							Transparency = .4,
+							Transparency2 = 1,
+							CFrame = CF(POS) * CF(0, 0, 0) * CFrame.new(0,-2.35,0) * ANGLES(RAD(MRANDOM(0, 360)), RAD(MRANDOM(0, 360)), RAD(SINE * 20)),
+							MoveToPos = nil,
+							RotationX = 0,
+							RotationY = 0,
+							RotationZ = 0,
+							Material = "Neon",
+							Color = C3(.4, 1, .4),
+							SoundID = nil,
+							SoundPitch = 2,
+							SoundVolume = 10,
+							UseBoomerangMath = true,
+							Boomerang = 0,
+							SizeBoomerang = 10
+				})
+				WACKYEFFECT({
+							Time = 100,
+							EffectType = "Sphere",
+							Size = VT(10, 10, 10)*10,
+							Size2 = VT(25, 25, 25)*10,
+							Transparency = .6,
+							Transparency2 = 1,
+							CFrame = CF(POS) * CF(0, 0, 0) * CFrame.new(0,-2.35,0) * ANGLES(RAD(MRANDOM(0, 360)), RAD(MRANDOM(0, 360)), RAD(SINE * 20)),
+							MoveToPos = nil,
+							RotationX = 0,
+							RotationY = 0,
+							RotationZ = 0,
+							Material = "Neon",
+							Color = C3(.3, 1, .3),
+							SoundID = nil,
+							SoundPitch = 2,
+							SoundVolume = 10,
+							UseBoomerangMath = true,
+							Boomerang = 0,
+							SizeBoomerang = 10
+				})
+				WACKYEFFECT({
+					Time = 110,
+					EffectType = "Round Slash",
+					Size = VT(0, 0, 0),
+					Size2 = VT(0.035, 0, 0.035)*45,
+					Transparency = .5,
+					Transparency2 = 1,
+					CFrame = CF(POS) * CF(0, 0, 0) * ANGLES(RAD(MRANDOM(0, 360)), RAD(MRANDOM(0, 360)), RAD(MRANDOM(0, 360))),
+					MoveToPos = nil,
+					RotationX = 0,
+					RotationY = 0,
+					RotationZ = 0,
+					Material = "Neon",
+					Color = C3(.4, 1, .4),
+					SoundID = nil,
+					SoundPitch = nil,
+					SoundVolume = nil,
+					UseBoomerangMath = true,
+					Boomerang = 10,
+					SizeBoomerang = 20
+				})
+				WACKYEFFECT({
+					Time = 110,
+					EffectType = "Round Slash",
+					Size = VT(0, 0, 0),
+					Size2 = VT(0.035, 0, 0.035)*45,
+					Transparency = .5,
+					Transparency2 = 1,
+					CFrame = CF(POS) * CF(0, 0, 0) * ANGLES(RAD(MRANDOM(0, 360)), RAD(MRANDOM(0, 360)), RAD(MRANDOM(0, 360))),
+					MoveToPos = nil,
+					RotationX = 0,
+					RotationY = 0,
+					RotationZ = 0,
+					Material = "Neon",
+					Color = C3(.3, 1, .3),
+					SoundID = nil,
+					SoundPitch = nil,
+					SoundVolume = nil,
+					UseBoomerangMath = true,
+					Boomerang = 10,
+					SizeBoomerang = 20
+				})
+				WACKYEFFECT({
+					Time = 110,
+					EffectType = "Round Slash",
+					Size = VT(0, 0, 0),
+					Size2 = VT(0.035, 0, 0.035)*45,
+					Transparency = .5,
+					Transparency2 = 1,
+					CFrame = CF(POS) * CF(0, 0, 0) * ANGLES(RAD(MRANDOM(0, 360)), RAD(MRANDOM(0, 360)), RAD(MRANDOM(0, 360))),
+					MoveToPos = nil,
+					RotationX = 0,
+					RotationY = 0,
+					RotationZ = 0,
+					Material = "Neon",
+					Color = C3(.3, 1, .3),
+					SoundID = nil,
+					SoundPitch = nil,
+					SoundVolume = nil,
+					UseBoomerangMath = true,
+					Boomerang = 10,
+					SizeBoomerang = 20
+				})
+				WACKYEFFECT({
+					Time = 110,
+					EffectType = "Round Slash",
+					Size = VT(0, 0, 0),
+					Size2 = VT(0.035, 0, 0.035)*45,
+					Transparency = .5,
+					Transparency2 = 1,
+					CFrame = CF(POS) * CF(0, 0, 0) * ANGLES(RAD(MRANDOM(0, 360)), RAD(MRANDOM(0, 360)), RAD(MRANDOM(0, 360))),
+					MoveToPos = nil,
+					RotationX = 0,
+					RotationY = 0,
+					RotationZ = 0,
+					Material = "Neon",
+					Color = C3(.4, 1, .4),
+					SoundID = nil,
+					SoundPitch = nil,
+					SoundVolume = nil,
+					UseBoomerangMath = true,
+					Boomerang = 10,
+					SizeBoomerang = 20
+				})
+				WACKYEFFECT({
+					Time = 110,
+					EffectType = "Round Slash",
+					Size = VT(0, 0, 0),
+					Size2 = VT(0.035, 0, 0.035)*45,
+					Transparency = .5,
+					Transparency2 = 1,
+					CFrame = CF(POS) * CF(0, 0, 0) * ANGLES(RAD(MRANDOM(0, 360)), RAD(MRANDOM(0, 360)), RAD(MRANDOM(0, 360))),
+					MoveToPos = nil,
+					RotationX = 0,
+					RotationY = 0,
+					RotationZ = 0,
+					Material = "Neon",
+					Color = C3(.3, 1, .3),
+					SoundID = nil,
+					SoundPitch = nil,
+					SoundVolume = nil,
+					UseBoomerangMath = true,
+					Boomerang = 10,
+					SizeBoomerang = 20
+				})
+				WACKYEFFECT({
+					Time = 110,
+					EffectType = "Round Slash",
+					Size = VT(0, 0, 0),
+					Size2 = VT(0.035, 0, 0.035)*45,
+					Transparency = .5,
+					Transparency2 = 1,
+					CFrame = CF(POS) * CF(0, 0, 0) * ANGLES(RAD(MRANDOM(0, 360)), RAD(MRANDOM(0, 360)), RAD(MRANDOM(0, 360))),
+					MoveToPos = nil,
+					RotationX = 0,
+					RotationY = 0,
+					RotationZ = 0,
+					Material = "Neon",
+					Color = C3(.4, 1, .4),
+					SoundID = nil,
+					SoundPitch = nil,
+					SoundVolume = nil,
+					UseBoomerangMath = true,
+					Boomerang = 10,
+					SizeBoomerang = 20
+				})
+				WACKYEFFECT({
+					Time = 110,
+					EffectType = "Round Slash",
+					Size = VT(0, 0, 0),
+					Size2 = VT(0.035, 0, 0.035)*45,
+					Transparency = .5,
+					Transparency2 = 1,
+					CFrame = CF(POS) * CF(0, 0, 0) * ANGLES(RAD(MRANDOM(0, 360)), RAD(MRANDOM(0, 360)), RAD(MRANDOM(0, 360))),
+					MoveToPos = nil,
+					RotationX = 0,
+					RotationY = 0,
+					RotationZ = 0,
+					Material = "Neon",
+					Color = C3(.2, 1, .2),
+					SoundID = nil,
+					SoundPitch = nil,
+					SoundVolume = nil,
+					UseBoomerangMath = true,
+					Boomerang = 10,
+					SizeBoomerang = 20
+				})
+				WACKYEFFECT({Time = 110, EffectType = "Wave", Size = VT(1,1,1)*10, Size2 = VT(15,1,15)*10, Transparency = .5, Transparency2 = 1, CFrame = CF(POS)*CFrame.new(0,-.5,0)*CFrame.Angles(RAD(0),RAD(MRANDOM(-180, 180)),RAD(0)), RotationX = 0, RotationY = 0, RotationZ = 0, Material = "Neon", Color = Color3.new(.3,1,.3), SoundID = nil, SoundPitch = nil, SoundVolume = nil})  
+				WACKYEFFECT({Time = 110, EffectType = "Wave", Size = VT(1,1,1)*10, Size2 = VT(15,1,15)*10, Transparency = .5, Transparency2 = 1, CFrame = CF(POS)*CFrame.new(0,-.5,0)*CFrame.Angles(RAD(0),RAD(MRANDOM(-180, 180)),RAD(0)), RotationX = 0, RotationY = 0, RotationZ = 0, Material = "Neon", Color = Color3.new(.3,1,.3), SoundID = nil, SoundPitch = nil, SoundVolume = nil})  
+				WACKYEFFECT({Time = 110, EffectType = "Wave", Size = VT(1,1,1)*10, Size2 = VT(15,1,15)*11, Transparency = .5, Transparency2 = 1, CFrame = CF(POS)*CFrame.new(0,-.5,0)*CFrame.Angles(RAD(0),RAD(MRANDOM(-180, 180)),RAD(0)), RotationX = 0, RotationY = 0, RotationZ = 0, Material = "Neon", Color = Color3.new(.3,1,.3), SoundID = nil, SoundPitch = nil, SoundVolume = nil})  
+				WACKYEFFECT({Time = 110, EffectType = "Wave", Size = VT(1,1,1)*10, Size2 = VT(15,1,15)*11, Transparency = .5, Transparency2 = 1, CFrame = CF(POS)*CFrame.new(0,-.5,0)*CFrame.Angles(RAD(0),RAD(MRANDOM(-180, 180)),RAD(0)), RotationX = 0, RotationY = 0, RotationZ = 0, Material = "Neon", Color = Color3.new(.3,1,.3), SoundID = nil, SoundPitch = nil, SoundVolume = nil})  
+				WACKYEFFECT({Time = 110, EffectType = "Wave", Size = VT(1,1,1)*10, Size2 = VT(15,1,15)*11, Transparency = .5, Transparency2 = 1, CFrame = CF(POS)*CFrame.new(0,-.5,0)*CFrame.Angles(RAD(0),RAD(MRANDOM(-180, 180)),RAD(0)), RotationX = 0, RotationY = 0, RotationZ = 0, Material = "Neon", Color = Color3.new(.3,1,.3), SoundID = nil, SoundPitch = nil, SoundVolume = nil})    
+				WACKYEFFECT({Time = 110, EffectType = "Wave", Size = VT(15,2,15) * 4, Size2 = VT(60,2,60) * 4, Transparency = 0.4, Transparency2 = 1, CFrame = CF(POS) * ANGLES(RAD(MRANDOM(0, 360)), RAD(MRANDOM(0, 360)), RAD(MRANDOM(0, 360))), MoveToPos = nil, RotationX =  RAD(MRANDOM(-360, 360)), RotationY = RAD(MRANDOM(-360, 360)), RotationZ = RAD(MRANDOM(-360, 360)), Material = "Neon", Color = C3(.3,1,.3), SoundID = nil, SoundPitch = 1, SoundVolume = 10, UseBoomerangMath = true, Boomerang = 10, SizeBoomerang = 20})
+				WACKYEFFECT({Time = 110, EffectType = "Wave", Size = VT(15,2,15) * 4, Size2 = VT(60,2,60) * 4, Transparency = 0.4, Transparency2 = 1, CFrame = CF(POS) * ANGLES(RAD(MRANDOM(0, 360)), RAD(MRANDOM(0, 360)), RAD(MRANDOM(0, 360))), MoveToPos = nil, RotationX =  RAD(MRANDOM(-360, 360)), RotationY = RAD(MRANDOM(-360, 360)), RotationZ = RAD(MRANDOM(-360, 360)), Material = "Neon", Color = C3(.3,1,.3), SoundID = nil, SoundPitch = 1, SoundVolume = 10, UseBoomerangMath = true, Boomerang = 10, SizeBoomerang = 20})
+				WACKYEFFECT({Time = 110, EffectType = "Wave", Size = VT(15,2,15)*2, Size2 = VT(60,2,60)*2, Transparency = 0, Transparency2 = 1, CFrame = CF(POS) * ANGLES(RAD(MRANDOM(0, 360)), RAD(MRANDOM(0, 360)), RAD(MRANDOM(0, 360))), MoveToPos = nil, RotationX =  RAD(MRANDOM(-360, 360)), RotationY = RAD(MRANDOM(-360, 360)), RotationZ = RAD(MRANDOM(-360, 360)), Material = "Neon", Color = C3(.2,1,.2), SoundID = nil, SoundPitch = 1, SoundVolume = 10, UseBoomerangMath = true, Boomerang = 10, SizeBoomerang = 20})
+				WACKYEFFECT({Time = 110, EffectType = "Wave", Size = VT(15,2,15)*2, Size2 = VT(60,2,60)*2, Transparency = 0, Transparency2 = 1, CFrame = CF(POS) * ANGLES(RAD(MRANDOM(0, 360)), RAD(MRANDOM(0, 360)), RAD(MRANDOM(0, 360))), MoveToPos = nil, RotationX =  RAD(MRANDOM(-360, 360)), RotationY = RAD(MRANDOM(-360, 360)), RotationZ = RAD(MRANDOM(-360, 360)), Material = "Neon", Color = C3(.2,1,.2), SoundID = nil, SoundPitch = 1, SoundVolume = 10, UseBoomerangMath = true, Boomerang = 10, SizeBoomerang = 20})
+				AOETime(RAY2.Position,145)
+				RAY2:remove()
+				break
+			else
+				RAY2.CFrame = Clerp(RAY2.CFrame,CF(RAY2.Position,Mouse.Hit.p),0.001) * CF(0,0,-4) 
+				AOETime(RAY2.Position,35)
+				WACKYEFFECT({
+							Time = 12,
+							EffectType = "Sphere",
+							Size = VT(0, 0, 0),
+							Size2 = VT(15, 10, 15)*2,
+							Transparency = 0,
+							Transparency2 = 1,
+							CFrame = RAY2.CFrame * CF(0, 0, 0) * CFrame.new(0,-2.35,0) * ANGLES(RAD(MRANDOM(0, 360)), RAD(MRANDOM(0, 360)), RAD(SINE * 20)),
+							MoveToPos = nil,
+							RotationX = 0,
+							RotationY = 0,
+							RotationZ = 0,
+							Material = "Neon",
+							Color = C3(.4, .8, .4),
+							SoundID = nil,
+							SoundPitch = 2,
+							SoundVolume = 10,
+							UseBoomerangMath = true,
+							Boomerang = 0,
+							SizeBoomerang = 10
+				})
+			end	
+		end   
+		RAY2:remove()          	
+	end))
+	for i = 0, .5, 0.1 / Animation_Speed do
+			Swait()
+			--[[Any Basic Hand Movement]] RootJoint.C0 = Clerp(RootJoint.C0,ROOTC0 * CF(0, 0, 0 + 0.045 * COS(SINE / 32)) * ANGLES(RAD(275), RAD(-10), RAD(90)) * ANGLES(RAD(0), RAD(0), RAD(0)), 0.15 / Animation_Speed)
+			animatefingers("lerp",
+			{
+			--[[Bottom Index]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(0)),
+			--[[Top Index]] CF(0,5.5,0)*ANGLES(RAD(-50), RAD(0), RAD(0)),
+			--[[Bottom Middle]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(0)),
+			--[[Top Middle]] CF(0,5.5,0)*ANGLES(RAD(-50), RAD(0), RAD(0)),
+			--[[Bottom Ring]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(85)),
+			--[[Top Ring]] CF(0,-5,3.5)*ANGLES(RAD(85), RAD(0), RAD(0)),
+			--[[Bottom Pinkie]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(85)),
+			--[[Top Pinkie]] CF(0,-5,3.5)*ANGLES(RAD(85), RAD(0), RAD(0)),
+			--[[Bottom Thumb]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(-15)),
+			--[[Top Thumb]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(-15)),
+			}, .1)
+			GYRO.cframe = CF(RootPart.Position, Mouse.Hit.p)
+	end
+	GYRO:remove()
+	ATTACK = false
+end
+
+function PunishingSmash()
+	ATTACK = true
+	for i = 0, 1, 0.1 / Animation_Speed do
+			Swait()
+			--[[Any Basic Hand Movement]] RootJoint.C0 = Clerp(RootJoint.C0,ROOTC0 * CF(0, 0, 30 + 0.045 * COS(SINE / 32)) * ANGLES(RAD(90), RAD(-20), RAD(0)) * ANGLES(RAD(0), RAD(0), RAD(0)), 0.15 / Animation_Speed)
+			animatefingers("lerp",
+			{
+			--[[Bottom Index]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(0)),
+			--[[Top Index]] CF(0,0,0)*ANGLES(RAD(-75), RAD(0), RAD(0)),
+			--[[Bottom Middle]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(0)),
+			--[[Top Middle]] CF(0,0,0)*ANGLES(RAD(-75), RAD(0), RAD(0)),
+			--[[Bottom Ring]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(0)),
+			--[[Top Ring]] CF(0,0,0)*ANGLES(RAD(-75), RAD(0), RAD(0)),
+			--[[Bottom Pinkie]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(0)),
+			--[[Top Pinkie]] CF(0,0,0)*ANGLES(RAD(-75), RAD(0), RAD(0)),
+			--[[Bottom Thumb]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(0)),
+			--[[Top Thumb]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(-75)),
+			}, .1)
+	end
+	for i = 0, .15, 0.1 / Animation_Speed do
+			Swait()
+			--[[Any Basic Hand Movement]] RootJoint.C0 = Clerp(RootJoint.C0,ROOTC0 * CF(0, 0, 10 + 0.045 * COS(SINE / 32)) * ANGLES(RAD(90), RAD(-40), RAD(0)) * ANGLES(RAD(0), RAD(0), RAD(0)), 0.15 / Animation_Speed)
+			animatefingers("lerp",
+			{
+			--[[Bottom Index]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(0)),
+			--[[Top Index]] CF(0,0,0)*ANGLES(RAD(-55), RAD(0), RAD(0)),
+			--[[Bottom Middle]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(0)),
+			--[[Top Middle]] CF(0,0,0)*ANGLES(RAD(-55), RAD(0), RAD(0)),
+			--[[Bottom Ring]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(0)),
+			--[[Top Ring]] CF(0,0,0)*ANGLES(RAD(-55), RAD(0), RAD(0)),
+			--[[Bottom Pinkie]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(0)),
+			--[[Top Pinkie]] CF(0,0,0)*ANGLES(RAD(-55), RAD(0), RAD(0)),
+			--[[Bottom Thumb]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(0)),
+			--[[Top Thumb]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(-55)),
+			}, .1)
+	end
+	for i = 0, .15, 0.1 / Animation_Speed do
+			Swait()
+			--[[Any Basic Hand Movement]] RootJoint.C0 = Clerp(RootJoint.C0,ROOTC0 * CF(0, 0, -20 + 0.045 * COS(SINE / 32)) * ANGLES(RAD(90), RAD(-70), RAD(0)) * ANGLES(RAD(0), RAD(0), RAD(0)), 0.15 / Animation_Speed)
+			animatefingers("lerp",
+			{
+			--[[Bottom Index]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(0)),
+			--[[Top Index]] CF(0,0,0)*ANGLES(RAD(-55), RAD(0), RAD(0)),
+			--[[Bottom Middle]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(0)),
+			--[[Top Middle]] CF(0,0,0)*ANGLES(RAD(-55), RAD(0), RAD(0)),
+			--[[Bottom Ring]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(0)),
+			--[[Top Ring]] CF(0,0,0)*ANGLES(RAD(-55), RAD(0), RAD(0)),
+			--[[Bottom Pinkie]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(0)),
+			--[[Top Pinkie]] CF(0,0,0)*ANGLES(RAD(-55), RAD(0), RAD(0)),
+			--[[Bottom Thumb]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(0)),
+			--[[Top Thumb]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(-55)),
+			}, .1)
+	end
+	CreateSound("1606719431",STUFF,5,1.5,false)
+	CreateSound("1606719431",STUFF,5,1.5,false)
+	CreateSound("421327488",STUFF,5,1.35,false)
+	CreateSound("421327488",STUFF,5,1.35,false)
+	CameraShake(RootPart.Position,1e9,35,105) 
+	AOETime(RootPart.Position,80)
+	MainHand.BH.CanCollide = true
+	WACKYEFFECT({
+			Time = 50,
+			EffectType = "Sphere",
+			Size = VT(200, 200, 200),
+			Size2 = VT(0, 0, 0),
+			Transparency = 1,
+			Transparency2 = 0.35,
+			CFrame = CF(Torso.Position),
+			MoveToPos = nil,
+			RotationX = 0,
+			RotationY = 0,
+			RotationZ = 0,
+			Material = "Neon",
+			Color = C3(.5, 1, .5),
+			SoundID = nil,
+			SoundPitch = nil,
+			SoundVolume = nil
+	})
+	WACKYEFFECT({
+			Time = 50,
+			EffectType = "Sphere",
+			Size = VT(200, 200, 200)/.5,
+			Size2 = VT(0, 0, 0),
+			Transparency = 1,
+			Transparency2 = 0.35,
+			CFrame = CF(Torso.Position),
+			MoveToPos = nil,
+			RotationX = 0,
+			RotationY = 0,
+			RotationZ = 0,
+			Material = "Neon",
+			Color = C3(.5, 1, .5),
+			SoundID = nil,
+			SoundPitch = nil,
+			SoundVolume = nil
+	})
+	WACKYEFFECT({
+			Time = 50,
+			EffectType = "Sphere",
+			Size = VT(200, 200, 200)/2,
+			Size2 = VT(0, 0, 0),
+			Transparency = 1,
+			Transparency2 = 0.35,
+			CFrame = CF(Torso.Position),
+			MoveToPos = nil,
+			RotationX = 0,
+			RotationY = 0,
+			RotationZ = 0,
+			Material = "Neon",
+			Color = C3(.5, 1, .5),
+			SoundID = nil,
+			SoundPitch = nil,
+			SoundVolume = nil
+	})
+	WACKYEFFECT({
+			Time = 50,
+			EffectType = "Sphere",
+			Size = VT(200, 200, 200),
+			Size2 = VT(0, 0, 0),
+			Transparency = 1,
+			Transparency2 = 0.35,
+			CFrame = CF(Torso.Position),
+			MoveToPos = nil,
+			RotationX = 0,
+			RotationY = 0,
+			RotationZ = 0,
+			Material = "Neon",
+			Color = C3(.5, 1, .5),
+			SoundID = nil,
+			SoundPitch = nil,
+			SoundVolume = nil
+	})
+	WACKYEFFECT({
+			Time = 50,
+			EffectType = "Sphere",
+			Size = VT(200, 200, 200)/.5,
+			Size2 = VT(0, 0, 0),
+			Transparency = 1,
+			Transparency2 = 0.35,
+			CFrame = CF(Torso.Position),
+			MoveToPos = nil,
+			RotationX = 0,
+			RotationY = 0,
+			RotationZ = 0,
+			Material = "Neon",
+			Color = C3(.5, 1, .5),
+			SoundID = nil,
+			SoundPitch = nil,
+			SoundVolume = nil
+	})
+	WACKYEFFECT({
+			Time = 50,
+			EffectType = "Sphere",
+			Size = VT(200, 200, 200)/2,
+			Size2 = VT(0, 0, 0),
+			Transparency = 1,
+			Transparency2 = 0.35,
+			CFrame = CF(Torso.Position),
+			MoveToPos = nil,
+			RotationX = 0,
+			RotationY = 0,
+			RotationZ = 0,
+			Material = "Neon",
+			Color = C3(.5, 1, .5),
+			SoundID = nil,
+			SoundPitch = nil,
+			SoundVolume = nil
+	})
+	WACKYEFFECT({
+			Time = 50,
+			EffectType = "Sphere",
+			Size = VT(200, 200, 200),
+			Size2 = VT(0, 0, 0),
+			Transparency = 1,
+			Transparency2 = 0.35,
+			CFrame = CF(Torso.Position),
+			MoveToPos = nil,
+			RotationX = 0,
+			RotationY = 0,
+			RotationZ = 0,
+			Material = "Neon",
+			Color = C3(.5, 1, .5),
+			SoundID = nil,
+			SoundPitch = nil,
+			SoundVolume = nil
+	})
+	WACKYEFFECT({
+			Time = 50,
+			EffectType = "Sphere",
+			Size = VT(200, 200, 200)/.5,
+			Size2 = VT(0, 0, 0),
+			Transparency = 1,
+			Transparency2 = 0.35,
+			CFrame = CF(Torso.Position),
+			MoveToPos = nil,
+			RotationX = 0,
+			RotationY = 0,
+			RotationZ = 0,
+			Material = "Neon",
+			Color = C3(.5, 1, .5),
+			SoundID = nil,
+			SoundPitch = nil,
+			SoundVolume = nil
+	})
+	WACKYEFFECT({
+			Time = 50,
+			EffectType = "Sphere",
+			Size = VT(200, 200, 200)/2,
+			Size2 = VT(0, 0, 0),
+			Transparency = 1,
+			Transparency2 = 0.35,
+			CFrame = CF(Torso.Position),
+			MoveToPos = nil,
+			RotationX = 0,
+			RotationY = 0,
+			RotationZ = 0,
+			Material = "Neon",
+			Color = C3(.5, 1, .5),
+			SoundID = nil,
+			SoundPitch = nil,
+			SoundVolume = nil
+	})
+	for i = 0, 3, 0.1 / Animation_Speed do
+			Swait()
+			CameraShake(RootPart.Position,1e9,35,105) 
+			AOETime(RootPart.Position,90)
+			WACKYEFFECT({
+				Time = 65,
+				EffectType = "Round Slash",
+				Size = VT(0, 0, 0),
+				Size2 = VT(0.035, 0, 0.035)*15,
+				Transparency = .5,
+				Transparency2 = 1,
+				CFrame = CF(Torso.Position) * CFrame.new(0,-1,0) * ANGLES(RAD(0), RAD(90), RAD(0)),
+				MoveToPos = nil,
+				RotationX = 0,
+				RotationY = math.random(-15,15),
+				RotationZ = 0,
+				Material = "Neon",
+				Color = C3(.4, 1, .4),
+				SoundID = nil,
+				SoundPitch = nil,
+				SoundVolume = nil,
+				UseBoomerangMath = true,
+				Boomerang = 10,
+				SizeBoomerang = 20
+			})
+			WACKYEFFECT({Time = 65, EffectType = "Wave", Size = VT(1,1,1)*5, Size2 = VT(15,1,15)*5, Transparency = .75, Transparency2 = 1, CFrame = CF(Torso.Position)* CFrame.new(0,-1,0)*CFrame.Angles(RAD(0),RAD(MRANDOM(-180, 180)),RAD(0)), RotationX = 0, RotationY = math.random(-15,15), RotationZ = 0, Material = "Neon", Color = Color3.new(.3,1,.3), SoundID = nil, SoundPitch = nil, SoundVolume = nil, UseBoomerangMath = true, Boomerang = 10, SizeBoomerang = 20})   
+			AOETime(RootPart.Position,35)
+			--[[Any Basic Hand Movement]] RootJoint.C0 = Clerp(RootJoint.C0,ROOTC0 * CF(0, 0, -45 + 5 * COS(SINE / 32)) * ANGLES(RAD(90), RAD(-70 + 80 * COS(SINE / 24)), RAD(0)) * ANGLES(RAD(0), RAD(0), RAD(0)), 0.15 / Animation_Speed)
+			animatefingers("lerp",
+			{
+			--[[Bottom Index]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(0)),
+			--[[Top Index]] CF(0,0,-1.5)*ANGLES(RAD(-55), RAD(0), RAD(0)),
+			--[[Bottom Middle]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(0)),
+			--[[Top Middle]] CF(0,0,-1.5)*ANGLES(RAD(-55), RAD(0), RAD(0)),
+			--[[Bottom Ring]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(0)),
+			--[[Top Ring]] CF(0,0,-1.5)*ANGLES(RAD(-55), RAD(0), RAD(0)),
+			--[[Bottom Pinkie]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(0)),
+			--[[Top Pinkie]] CF(0,0,-1.5)*ANGLES(RAD(-55), RAD(0), RAD(0)),
+			--[[Bottom Thumb]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(0)),
+			--[[Top Thumb]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(-25)),
+			}, .1)
+	end
+	WACKYEFFECT({
+			Time = 50,
+			EffectType = "Sphere",
+			Size = VT(200, 200, 200),
+			Size2 = VT(0, 0, 0),
+			Transparency = 1,
+			Transparency2 = 0.35,
+			CFrame = CF(Torso.Position),
+			MoveToPos = nil,
+			RotationX = 0,
+			RotationY = 0,
+			RotationZ = 0,
+			Material = "Neon",
+			Color = C3(.5, 1, .5),
+			SoundID = nil,
+			SoundPitch = nil,
+			SoundVolume = nil
+	})
+	WACKYEFFECT({
+			Time = 50,
+			EffectType = "Sphere",
+			Size = VT(200, 200, 200)/.5,
+			Size2 = VT(0, 0, 0),
+			Transparency = 1,
+			Transparency2 = 0.35,
+			CFrame = CF(Torso.Position),
+			MoveToPos = nil,
+			RotationX = 0,
+			RotationY = 0,
+			RotationZ = 0,
+			Material = "Neon",
+			Color = C3(.5, 1, .5),
+			SoundID = nil,
+			SoundPitch = nil,
+			SoundVolume = nil
+	})
+	WACKYEFFECT({
+			Time = 50,
+			EffectType = "Sphere",
+			Size = VT(200, 200, 200)/2,
+			Size2 = VT(0, 0, 0),
+			Transparency = 1,
+			Transparency2 = 0.35,
+			CFrame = CF(Torso.Position),
+			MoveToPos = nil,
+			RotationX = 0,
+			RotationY = 0,
+			RotationZ = 0,
+			Material = "Neon",
+			Color = C3(.5, 1, .5),
+			SoundID = nil,
+			SoundPitch = nil,
+			SoundVolume = nil
+	})
+	WACKYEFFECT({
+			Time = 50,
+			EffectType = "Sphere",
+			Size = VT(200, 200, 200),
+			Size2 = VT(0, 0, 0),
+			Transparency = 1,
+			Transparency2 = 0.35,
+			CFrame = CF(Torso.Position),
+			MoveToPos = nil,
+			RotationX = 0,
+			RotationY = 0,
+			RotationZ = 0,
+			Material = "Neon",
+			Color = C3(.5, 1, .5),
+			SoundID = nil,
+			SoundPitch = nil,
+			SoundVolume = nil
+	})
+	WACKYEFFECT({
+			Time = 50,
+			EffectType = "Sphere",
+			Size = VT(200, 200, 200)/.5,
+			Size2 = VT(0, 0, 0),
+			Transparency = 1,
+			Transparency2 = 0.35,
+			CFrame = CF(Torso.Position),
+			MoveToPos = nil,
+			RotationX = 0,
+			RotationY = 0,
+			RotationZ = 0,
+			Material = "Neon",
+			Color = C3(.5, 1, .5),
+			SoundID = nil,
+			SoundPitch = nil,
+			SoundVolume = nil
+	})
+	WACKYEFFECT({
+			Time = 50,
+			EffectType = "Sphere",
+			Size = VT(200, 200, 200)/2,
+			Size2 = VT(0, 0, 0),
+			Transparency = 1,
+			Transparency2 = 0.35,
+			CFrame = CF(Torso.Position),
+			MoveToPos = nil,
+			RotationX = 0,
+			RotationY = 0,
+			RotationZ = 0,
+			Material = "Neon",
+			Color = C3(.5, 1, .5),
+			SoundID = nil,
+			SoundPitch = nil,
+			SoundVolume = nil
+	})
+	WACKYEFFECT({
+			Time = 50,
+			EffectType = "Sphere",
+			Size = VT(200, 200, 200),
+			Size2 = VT(0, 0, 0),
+			Transparency = 1,
+			Transparency2 = 0.35,
+			CFrame = CF(Torso.Position),
+			MoveToPos = nil,
+			RotationX = 0,
+			RotationY = 0,
+			RotationZ = 0,
+			Material = "Neon",
+			Color = C3(.5, 1, .5),
+			SoundID = nil,
+			SoundPitch = nil,
+			SoundVolume = nil
+	})
+	WACKYEFFECT({
+			Time = 50,
+			EffectType = "Sphere",
+			Size = VT(200, 200, 200)/.5,
+			Size2 = VT(0, 0, 0),
+			Transparency = 1,
+			Transparency2 = 0.35,
+			CFrame = CF(Torso.Position),
+			MoveToPos = nil,
+			RotationX = 0,
+			RotationY = 0,
+			RotationZ = 0,
+			Material = "Neon",
+			Color = C3(.5, 1, .5),
+			SoundID = nil,
+			SoundPitch = nil,
+			SoundVolume = nil
+	})
+	WACKYEFFECT({
+			Time = 50,
+			EffectType = "Sphere",
+			Size = VT(200, 200, 200)/2,
+			Size2 = VT(0, 0, 0),
+			Transparency = 1,
+			Transparency2 = 0.35,
+			CFrame = CF(Torso.Position),
+			MoveToPos = nil,
+			RotationX = 0,
+			RotationY = 0,
+			RotationZ = 0,
+			Material = "Neon",
+			Color = C3(.5, 1, .5),
+			SoundID = nil,
+			SoundPitch = nil,
+			SoundVolume = nil
+	})
+	MainHand.BH.CanCollide = false
+	for i = 0, .25, 0.1 / Animation_Speed do
+			Swait()
+			--[[Any Basic Hand Movement]] RootJoint.C0 = Clerp(RootJoint.C0,ROOTC0 * CF(0, 0, -10 + 0.045 * COS(SINE / 32)) * ANGLES(RAD(90), RAD(-40), RAD(0)) * ANGLES(RAD(0), RAD(0), RAD(0)), 0.15 / Animation_Speed)
+			animatefingers("lerp",
+			{
+			--[[Bottom Index]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(0)),
+			--[[Top Index]] CF(0,0,0)*ANGLES(RAD(-35), RAD(0), RAD(0)),
+			--[[Bottom Middle]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(0)),
+			--[[Top Middle]] CF(0,0,0)*ANGLES(RAD(-35), RAD(0), RAD(0)),
+			--[[Bottom Ring]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(0)),
+			--[[Top Ring]] CF(0,0,0)*ANGLES(RAD(-35), RAD(0), RAD(0)),
+			--[[Bottom Pinkie]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(0)),
+			--[[Top Pinkie]] CF(0,0,0)*ANGLES(RAD(-35), RAD(0), RAD(0)),
+			--[[Bottom Thumb]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(0)),
+			--[[Top Thumb]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(-35)),
+			}, .1)
+	end
+	for i = 0, .25, 0.1 / Animation_Speed do
+			Swait()
+			--[[Any Basic Hand Movement]] RootJoint.C0 = Clerp(RootJoint.C0,ROOTC0 * CF(0, 0, 25 + 0.045 * COS(SINE / 32)) * ANGLES(RAD(90), RAD(0), RAD(0)) * ANGLES(RAD(0), RAD(0), RAD(0)), 0.15 / Animation_Speed)
+			animatefingers("lerp",
+			{
+			--[[Bottom Index]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(0)),
+			--[[Top Index]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(0)),
+			--[[Bottom Middle]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(0)),
+			--[[Top Middle]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(0)),
+			--[[Bottom Ring]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(0)),
+			--[[Top Ring]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(0)),
+			--[[Bottom Pinkie]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(0)),
+			--[[Top Pinkie]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(0)),
+			--[[Bottom Thumb]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(0)),
+			--[[Top Thumb]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(0)),
+			}, .1)
+	end
+	for i = 0, .25, 0.1 / Animation_Speed do
+			Swait()
+			--[[Any Basic Hand Movement]] RootJoint.C0 = Clerp(RootJoint.C0,ROOTC0 * CF(0, 0, 25 + 0.045 * COS(SINE / 32)) * ANGLES(RAD(90), RAD(40), RAD(0)) * ANGLES(RAD(0), RAD(0), RAD(0)), 0.15 / Animation_Speed)
+			animatefingers("lerp",
+			{
+			--[[Bottom Index]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(0)),
+			--[[Top Index]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(0)),
+			--[[Bottom Middle]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(0)),
+			--[[Top Middle]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(0)),
+			--[[Bottom Ring]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(0)),
+			--[[Top Ring]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(0)),
+			--[[Bottom Pinkie]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(0)),
+			--[[Top Pinkie]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(0)),
+			--[[Bottom Thumb]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(0)),
+			--[[Top Thumb]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(0)),
+			}, .1)
+	end
+	ATTACK = false
+end
+
+function TimeDispeller()
+	ATTACK = true
+	for i = 0, 1, 0.1 / Animation_Speed do
+			Swait()
+			--[[Any Basic Hand Movement]] RootJoint.C0 = Clerp(RootJoint.C0,ROOTC0 * CF(0, 0, 30 + 0.045 * COS(SINE / 32)) * ANGLES(RAD(180), RAD(0), RAD(0)) * ANGLES(RAD(0), RAD(0), RAD(0)), 0.15 / Animation_Speed)
+			animatefingers("lerp",
+			{
+			--[[Bottom Index]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(85)),
+			--[[Top Index]] CF(0,-5,3.5)*ANGLES(RAD(85), RAD(0), RAD(0)),
+			--[[Bottom Middle]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(85)),
+			--[[Top Middle]] CF(0,-5,3.5)*ANGLES(RAD(85), RAD(0), RAD(0)),
+			--[[Bottom Ring]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(85)),
+			--[[Top Ring]] CF(0,-5,3.5)*ANGLES(RAD(85), RAD(0), RAD(0)),
+			--[[Bottom Pinkie]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(85)),
+			--[[Top Pinkie]] CF(0,-5,3.5)*ANGLES(RAD(85), RAD(0), RAD(0)),
+			--[[Bottom Thumb]] CF(0,0,0)*ANGLES(RAD(35), RAD(0), RAD(85)),
+			--[[Top Thumb]] CF(0,0,-1.5)*ANGLES(RAD(35), RAD(0), RAD(85)),
+			}, .1)
+	end
+	for i = 0, .15, 0.1 / Animation_Speed do
+			Swait()
+			--[[Any Basic Hand Movement]] RootJoint.C0 = Clerp(RootJoint.C0,ROOTC0 * CF(0, 0, 0 + 0.045 * COS(SINE / 32)) * ANGLES(RAD(180), RAD(0), RAD(0)) * ANGLES(RAD(0), RAD(0), RAD(0)), 0.15 / Animation_Speed)
+			animatefingers("lerp",
+			{
+			--[[Bottom Index]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(85)),
+			--[[Top Index]] CF(0,-5,3.5)*ANGLES(RAD(85), RAD(0), RAD(0)),
+			--[[Bottom Middle]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(85)),
+			--[[Top Middle]] CF(0,-5,3.5)*ANGLES(RAD(85), RAD(0), RAD(0)),
+			--[[Bottom Ring]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(85)),
+			--[[Top Ring]] CF(0,-5,3.5)*ANGLES(RAD(85), RAD(0), RAD(0)),
+			--[[Bottom Pinkie]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(85)),
+			--[[Top Pinkie]] CF(0,-5,3.5)*ANGLES(RAD(85), RAD(0), RAD(0)),
+			--[[Bottom Thumb]] CF(0,0,0)*ANGLES(RAD(35), RAD(0), RAD(85)),
+			--[[Top Thumb]] CF(0,0,-1.5)*ANGLES(RAD(35), RAD(0), RAD(85)),
+			}, .1)
+	end
+	for i = 0, .15, 0.1 / Animation_Speed do
+			Swait()
+			--[[Any Basic Hand Movement]] RootJoint.C0 = Clerp(RootJoint.C0,ROOTC0 * CF(0, 0, -20 + 0.045 * COS(SINE / 32)) * ANGLES(RAD(180), RAD(0), RAD(0)) * ANGLES(RAD(0), RAD(0), RAD(0)), 0.15 / Animation_Speed)
+			animatefingers("lerp",
+			{
+			--[[Bottom Index]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(85)),
+			--[[Top Index]] CF(0,-5,3.5)*ANGLES(RAD(85), RAD(0), RAD(0)),
+			--[[Bottom Middle]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(85)),
+			--[[Top Middle]] CF(0,-5,3.5)*ANGLES(RAD(85), RAD(0), RAD(0)),
+			--[[Bottom Ring]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(85)),
+			--[[Top Ring]] CF(0,-5,3.5)*ANGLES(RAD(85), RAD(0), RAD(0)),
+			--[[Bottom Pinkie]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(85)),
+			--[[Top Pinkie]] CF(0,-5,3.5)*ANGLES(RAD(85), RAD(0), RAD(0)),
+			--[[Bottom Thumb]] CF(0,0,0)*ANGLES(RAD(35), RAD(0), RAD(85)),
+			--[[Top Thumb]] CF(0,0,-1.5)*ANGLES(RAD(35), RAD(0), RAD(85)),
+			}, .1)
+	end
+	for i = 0, .15, 0.1 / Animation_Speed do
+			Swait()
+			--[[Any Basic Hand Movement]] RootJoint.C0 = Clerp(RootJoint.C0,ROOTC0 * CF(0, 0, -45 + 0.045 * COS(SINE / 32)) * ANGLES(RAD(180), RAD(0), RAD(0)) * ANGLES(RAD(0), RAD(0), RAD(0)), 0.15 / Animation_Speed)
+			animatefingers("lerp",
+			{
+			--[[Bottom Index]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(85)),
+			--[[Top Index]] CF(0,-5,3.5)*ANGLES(RAD(85), RAD(0), RAD(0)),
+			--[[Bottom Middle]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(85)),
+			--[[Top Middle]] CF(0,-5,3.5)*ANGLES(RAD(85), RAD(0), RAD(0)),
+			--[[Bottom Ring]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(85)),
+			--[[Top Ring]] CF(0,-5,3.5)*ANGLES(RAD(85), RAD(0), RAD(0)),
+			--[[Bottom Pinkie]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(85)),
+			--[[Top Pinkie]] CF(0,-5,3.5)*ANGLES(RAD(85), RAD(0), RAD(0)),
+			--[[Bottom Thumb]] CF(0,0,0)*ANGLES(RAD(35), RAD(0), RAD(85)),
+			--[[Top Thumb]] CF(0,0,-1.5)*ANGLES(RAD(35), RAD(0), RAD(85)),
+			}, .1)
+	end
+	CameraShake(RootPart.Position,1e9,15,90)
+	CreateSound("1098158115",RootPart,9,1.1,false)
+	CreateSound("1098158115",RootPart,9,1.1,false)
+	CreateSound("1098158115",RootPart,9,1.1,false)
+	CreateSound("1098158115",RootPart,9,1.1,false)
+	CreateSound("1098158115",RootPart,9,1.1,false)
+	WACKYEFFECT({
+							Time = 50,
+							EffectType = "Sphere",
+							Size = VT(10, 10, 10)*2,
+							Size2 = VT(25, 25, 25)*2,
+							Transparency = 0,
+							Transparency2 = 1,
+							CFrame = CF(Torso.Position) * CF(0, 0, 0) * CFrame.new(0,-2.35,0) * ANGLES(RAD(MRANDOM(0, 360)), RAD(MRANDOM(0, 360)), RAD(SINE * 20)),
+							MoveToPos = nil,
+							RotationX = 0,
+							RotationY = 0,
+							RotationZ = 0,
+							Material = "Neon",
+							Color = C3(.6, 1, .6),
+							SoundID = nil,
+							SoundPitch = 2,
+							SoundVolume = 10,
+							UseBoomerangMath = true,
+							Boomerang = 0,
+							SizeBoomerang = 10
+				})
+				WACKYEFFECT({
+							Time = 50,
+							EffectType = "Sphere",
+							Size = VT(10, 10, 10)*3,
+							Size2 = VT(25, 25, 25)*3,
+							Transparency = .4,
+							Transparency2 = 1,
+							CFrame = CF(Torso.Position) * CF(0, 0, 0) * CFrame.new(0,-2.35,0) * ANGLES(RAD(MRANDOM(0, 360)), RAD(MRANDOM(0, 360)), RAD(SINE * 20)),
+							MoveToPos = nil,
+							RotationX = 0,
+							RotationY = 0,
+							RotationZ = 0,
+							Material = "Neon",
+							Color = C3(.5, 1, .5),
+							SoundID = nil,
+							SoundPitch = 2,
+							SoundVolume = 10,
+							UseBoomerangMath = true,
+							Boomerang = 0,
+							SizeBoomerang = 10
+				})
+				WACKYEFFECT({
+							Time = 50,
+							EffectType = "Sphere",
+							Size = VT(10, 10, 10)*4,
+							Size2 = VT(25, 25, 25)*4,
+							Transparency = .6,
+							Transparency2 = 1,
+							CFrame = CF(Torso.Position) * CF(0, 0, 0) * CFrame.new(0,-2.35,0) * ANGLES(RAD(MRANDOM(0, 360)), RAD(MRANDOM(0, 360)), RAD(SINE * 20)),
+							MoveToPos = nil,
+							RotationX = 0,
+							RotationY = 0,
+							RotationZ = 0,
+							Material = "Neon",
+							Color = C3(.4, 1, .4),
+							SoundID = nil,
+							SoundPitch = 2,
+							SoundVolume = 10,
+							UseBoomerangMath = true,
+							Boomerang = 0,
+							SizeBoomerang = 10
+				})
+	AOETime(Torso.Position,55)
+	for i=0, .15, 0.1 / Animation_Speed do
+		Swait()
+		AOETime(Torso.Position,55)
+			WACKYEFFECT({
+							Time = 50,
+							EffectType = "Sphere",
+							Size = VT(10, 10, 10)*2,
+							Size2 = VT(25, 25, 25)*2,
+							Transparency = 0,
+							Transparency2 = 1,
+							CFrame = CF(Torso.Position) * CF(0, 0, 0) * CFrame.new(0,-2.35,0) * ANGLES(RAD(MRANDOM(0, 360)), RAD(MRANDOM(0, 360)), RAD(SINE * 20)),
+							MoveToPos = nil,
+							RotationX = 0,
+							RotationY = 0,
+							RotationZ = 0,
+							Material = "Neon",
+							Color = C3(.6, 1, .6),
+							SoundID = nil,
+							SoundPitch = 2,
+							SoundVolume = 10,
+							UseBoomerangMath = true,
+							Boomerang = 0,
+							SizeBoomerang = 10
+				})
+				WACKYEFFECT({
+							Time = 50,
+							EffectType = "Sphere",
+							Size = VT(10, 10, 10)*3,
+							Size2 = VT(25, 25, 25)*3,
+							Transparency = .4,
+							Transparency2 = 1,
+							CFrame = CF(Torso.Position) * CF(0, 0, 0) * CFrame.new(0,-2.35,0) * ANGLES(RAD(MRANDOM(0, 360)), RAD(MRANDOM(0, 360)), RAD(SINE * 20)),
+							MoveToPos = nil,
+							RotationX = 0,
+							RotationY = 0,
+							RotationZ = 0,
+							Material = "Neon",
+							Color = C3(.5, 1, .5),
+							SoundID = nil,
+							SoundPitch = 2,
+							SoundVolume = 10,
+							UseBoomerangMath = true,
+							Boomerang = 0,
+							SizeBoomerang = 10
+				})
+				WACKYEFFECT({
+							Time = 50,
+							EffectType = "Sphere",
+							Size = VT(10, 10, 10)*4,
+							Size2 = VT(25, 25, 25)*4,
+							Transparency = .6,
+							Transparency2 = 1,
+							CFrame = CF(Torso.Position) * CF(0, 0, 0) * CFrame.new(0,-2.35,0) * ANGLES(RAD(MRANDOM(0, 360)), RAD(MRANDOM(0, 360)), RAD(SINE * 20)),
+							MoveToPos = nil,
+							RotationX = 0,
+							RotationY = 0,
+							RotationZ = 0,
+							Material = "Neon",
+							Color = C3(.4, 1, .4),
+							SoundID = nil,
+							SoundPitch = 2,
+							SoundVolume = 10,
+							UseBoomerangMath = true,
+							Boomerang = 0,
+							SizeBoomerang = 10
+				})
+	end
+	--[]
+	local POS = Mouse.Hit.p+VT(0,15,0)
+	local ORI = RootPart.Orientation
+	RootPart.CFrame = CF(POS)
+	RootPart.Orientation = ORI
+	RootJoint.Parent = RootPart 
+	CameraShake(RootPart.Position,1e9,15,90)
+	CreateSound("1098158115",RootPart,9,1.1,false)
+	CreateSound("1098158115",RootPart,9,1.1,false)
+	CreateSound("1098158115",RootPart,9,1.1,false)
+	CreateSound("1098158115",RootPart,9,1.1,false)
+	CreateSound("1098158115",RootPart,9,1.1,false)
+	coroutine.resume(coroutine.create(function()
+	for i = 0, 1, 0.1 / Animation_Speed do
+			Swait()
+			--[[Any Basic Hand Movement]] RootJoint.C0 = Clerp(RootJoint.C0,ROOTC0 * CF(0, 0, -10 + 0.045 * COS(SINE / 32)) * ANGLES(RAD(-180), RAD(0), RAD(0)) * ANGLES(RAD(0), RAD(0), RAD(0)), 0.15 / Animation_Speed)
+			animatefingers("lerp",
+			{
+			--[[Bottom Index]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(85)),
+			--[[Top Index]] CF(0,-5,3.5)*ANGLES(RAD(85), RAD(0), RAD(0)),
+			--[[Bottom Middle]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(85)),
+			--[[Top Middle]] CF(0,-5,3.5)*ANGLES(RAD(85), RAD(0), RAD(0)),
+			--[[Bottom Ring]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(85)),
+			--[[Top Ring]] CF(0,-5,3.5)*ANGLES(RAD(85), RAD(0), RAD(0)),
+			--[[Bottom Pinkie]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(85)),
+			--[[Top Pinkie]] CF(0,-5,3.5)*ANGLES(RAD(85), RAD(0), RAD(0)),
+			--[[Bottom Thumb]] CF(0,0,0)*ANGLES(RAD(35), RAD(0), RAD(85)),
+			--[[Top Thumb]] CF(0,0,-1.5)*ANGLES(RAD(35), RAD(0), RAD(85)),
+			}, .1)
+	end
+	for i = 0, .15, 0.1 / Animation_Speed do
+			Swait()
+			--[[Any Basic Hand Movement]] RootJoint.C0 = Clerp(RootJoint.C0,ROOTC0 * CF(0, 0, 25 + 0.045 * COS(SINE / 32)) * ANGLES(RAD(-180), RAD(0), RAD(0)) * ANGLES(RAD(0), RAD(0), RAD(0)), 0.15 / Animation_Speed)
+			animatefingers("lerp",
+			{
+			--[[Bottom Index]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(85)),
+			--[[Top Index]] CF(0,-5,3.5)*ANGLES(RAD(85), RAD(0), RAD(0)),
+			--[[Bottom Middle]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(85)),
+			--[[Top Middle]] CF(0,-5,3.5)*ANGLES(RAD(85), RAD(0), RAD(0)),
+			--[[Bottom Ring]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(85)),
+			--[[Top Ring]] CF(0,-5,3.5)*ANGLES(RAD(85), RAD(0), RAD(0)),
+			--[[Bottom Pinkie]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(85)),
+			--[[Top Pinkie]] CF(0,-5,3.5)*ANGLES(RAD(85), RAD(0), RAD(0)),
+			--[[Bottom Thumb]] CF(0,0,0)*ANGLES(RAD(35), RAD(0), RAD(85)),
+			--[[Top Thumb]] CF(0,0,-1.5)*ANGLES(RAD(35), RAD(0), RAD(85)),
+			}, .1)
+	end
+	for i = 0, .15, 0.1 / Animation_Speed do
+			Swait()
+			--[[Any Basic Hand Movement]] RootJoint.C0 = Clerp(RootJoint.C0,ROOTC0 * CF(0, 0, 35 + 0.045 * COS(SINE / 32)) * ANGLES(RAD(-180), RAD(0), RAD(0)) * ANGLES(RAD(0), RAD(0), RAD(0)), 0.15 / Animation_Speed)
+			animatefingers("lerp",
+			{
+			--[[Bottom Index]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(85)),
+			--[[Top Index]] CF(0,-5,3.5)*ANGLES(RAD(85), RAD(0), RAD(0)),
+			--[[Bottom Middle]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(85)),
+			--[[Top Middle]] CF(0,-5,3.5)*ANGLES(RAD(85), RAD(0), RAD(0)),
+			--[[Bottom Ring]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(85)),
+			--[[Top Ring]] CF(0,-5,3.5)*ANGLES(RAD(85), RAD(0), RAD(0)),
+			--[[Bottom Pinkie]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(85)),
+			--[[Top Pinkie]] CF(0,-5,3.5)*ANGLES(RAD(85), RAD(0), RAD(0)),
+			--[[Bottom Thumb]] CF(0,0,0)*ANGLES(RAD(35), RAD(0), RAD(85)),
+			--[[Top Thumb]] CF(0,0,-1.5)*ANGLES(RAD(35), RAD(0), RAD(85)),
+			}, .1)
+	end
+	for i = 0, .15, 0.1 / Animation_Speed do
+			Swait()
+			--[[Any Basic Hand Movement]] RootJoint.C0 = Clerp(RootJoint.C0,ROOTC0 * CF(0, 0, 45 + 0.045 * COS(SINE / 32)) * ANGLES(RAD(-180), RAD(0), RAD(0)) * ANGLES(RAD(0), RAD(0), RAD(0)), 0.15 / Animation_Speed)
+			animatefingers("lerp",
+			{
+			--[[Bottom Index]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(85)),
+			--[[Top Index]] CF(0,-5,3.5)*ANGLES(RAD(85), RAD(0), RAD(0)),
+			--[[Bottom Middle]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(85)),
+			--[[Top Middle]] CF(0,-5,3.5)*ANGLES(RAD(85), RAD(0), RAD(0)),
+			--[[Bottom Ring]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(85)),
+			--[[Top Ring]] CF(0,-5,3.5)*ANGLES(RAD(85), RAD(0), RAD(0)),
+			--[[Bottom Pinkie]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(85)),
+			--[[Top Pinkie]] CF(0,-5,3.5)*ANGLES(RAD(85), RAD(0), RAD(0)),
+			--[[Bottom Thumb]] CF(0,0,0)*ANGLES(RAD(35), RAD(0), RAD(85)),
+			--[[Top Thumb]] CF(0,0,-1.5)*ANGLES(RAD(35), RAD(0), RAD(85)),
+			}, .1)
+	end
+	end))            
+	WACKYEFFECT({    
+							Time = 50,
+							EffectType = "Sphere",
+							Size = VT(10, 10, 10)*2,
+							Size2 = VT(25, 25, 25)*2,
+							Transparency = 0,
+							Transparency2 = 1,
+							CFrame = CF(POS) * CF(0, 0, 0) * CFrame.new(0,-2.35,0) * ANGLES(RAD(MRANDOM(0, 360)), RAD(MRANDOM(0, 360)), RAD(SINE * 20)),
+							MoveToPos = nil,
+							RotationX = 0,
+							RotationY = 0,
+							RotationZ = 0,
+							Material = "Neon",
+							Color = C3(.6, 1, .6),
+							SoundID = nil,
+							SoundPitch = 2,
+							SoundVolume = 10,
+							UseBoomerangMath = true,
+							Boomerang = 0,
+							SizeBoomerang = 10
+				})
+				WACKYEFFECT({
+							Time = 50,
+							EffectType = "Sphere",
+							Size = VT(10, 10, 10)*3,
+							Size2 = VT(25, 25, 25)*3,
+							Transparency = .4,
+							Transparency2 = 1,
+							CFrame = CF(POS) * CF(0, 0, 0) * CFrame.new(0,-2.35,0) * ANGLES(RAD(MRANDOM(0, 360)), RAD(MRANDOM(0, 360)), RAD(SINE * 20)),
+							MoveToPos = nil,
+							RotationX = 0,
+							RotationY = 0,
+							RotationZ = 0,
+							Material = "Neon",
+							Color = C3(.5, 1, .5),
+							SoundID = nil,
+							SoundPitch = 2,
+							SoundVolume = 10,
+							UseBoomerangMath = true,
+							Boomerang = 0,
+							SizeBoomerang = 10
+				})
+				WACKYEFFECT({
+							Time = 50,
+							EffectType = "Sphere",
+							Size = VT(10, 10, 10)*4,
+							Size2 = VT(25, 25, 25)*4,
+							Transparency = .6,
+							Transparency2 = 1,
+							CFrame = CF(POS) * CF(0, 0, 0) * CFrame.new(0,-2.35,0) * ANGLES(RAD(MRANDOM(0, 360)), RAD(MRANDOM(0, 360)), RAD(SINE * 20)),
+							MoveToPos = nil,
+							RotationX = 0,
+							RotationY = 0,
+							RotationZ = 0,
+							Material = "Neon",
+							Color = C3(.4, 1, .4),
+							SoundID = nil,
+							SoundPitch = 2,
+							SoundVolume = 10,
+							UseBoomerangMath = true,
+							Boomerang = 0,
+							SizeBoomerang = 10
+				})
+	AOETime(RootPart.Position,55)
+	for i=0, 2.5, 0.1 / Animation_Speed do
+		Swait()
+		AOETime(RootPart.Position,55)
+			WACKYEFFECT({
+							Time = 50,
+							EffectType = "Sphere",
+							Size = VT(10, 10, 10)*2,
+							Size2 = VT(25, 25, 25)*2,
+							Transparency = 0,
+							Transparency2 = 1,
+							CFrame = CF(POS) * CF(0, 0, 0) * CFrame.new(0,-2.35,0) * ANGLES(RAD(MRANDOM(0, 360)), RAD(MRANDOM(0, 360)), RAD(SINE * 20)),
+							MoveToPos = nil,
+							RotationX = 0,
+							RotationY = 0,
+							RotationZ = 0,
+							Material = "Neon",
+							Color = C3(.6, 1, .6),
+							SoundID = nil,
+							SoundPitch = 2,
+							SoundVolume = 10,
+							UseBoomerangMath = true,
+							Boomerang = 0,
+							SizeBoomerang = 10
+				})
+				WACKYEFFECT({
+							Time = 50,
+							EffectType = "Sphere",
+							Size = VT(10, 10, 10)*3,
+							Size2 = VT(25, 25, 25)*3,
+							Transparency = .4,
+							Transparency2 = 1,
+							CFrame = CF(POS) * CF(0, 0, 0) * CFrame.new(0,-2.35,0) * ANGLES(RAD(MRANDOM(0, 360)), RAD(MRANDOM(0, 360)), RAD(SINE * 20)),
+							MoveToPos = nil,
+							RotationX = 0,
+							RotationY = 0,
+							RotationZ = 0,
+							Material = "Neon",
+							Color = C3(.5, 1, .5),
+							SoundID = nil,
+							SoundPitch = 2,
+							SoundVolume = 10,
+							UseBoomerangMath = true,
+							Boomerang = 0,
+							SizeBoomerang = 10
+				})
+				WACKYEFFECT({
+							Time = 50,
+							EffectType = "Sphere",
+							Size = VT(10, 10, 10)*4,
+							Size2 = VT(25, 25, 25)*4,
+							Transparency = .6,
+							Transparency2 = 1,
+							CFrame = CF(POS) * CF(0, 0, 0) * CFrame.new(0,-2.35,0) * ANGLES(RAD(MRANDOM(0, 360)), RAD(MRANDOM(0, 360)), RAD(SINE * 20)),
+							MoveToPos = nil,
+							RotationX = 0,
+							RotationY = 0,
+							RotationZ = 0,
+							Material = "Neon",
+							Color = C3(.4, 1, .4),
+							SoundID = nil,
+							SoundPitch = 2,
+							SoundVolume = 10,
+							UseBoomerangMath = true,
+							Boomerang = 0,
+							SizeBoomerang = 10
+				})
+	end
+	ATTACK = false
+end
+
+function FingerBeams()
+	ATTACK = true
+	local IndexBeamPart = TI.TI.FingerModel.LaserPart
+	local MiddleBeamPart = TM.TM.Part1.LaserPart
+	local PinkieBeamPart = TP.TP.FingerModel.LaserPart
+	local RingBeamPart = TR.TR.FingerModel.LaserPart
+	local ThumbBeamPart = TT.TT.FingerModel.LaserPart
+	local GYRO = IT("BodyGyro", RootPart)
+	GYRO.D = 15
+	GYRO.P = 2000
+	GYRO.MaxTorque = VT(0, 4000000, 0) 
+	local LOOPINGBEAMSOUND = CreateSound("2572704956",STUFF,7.5,.95,true)
+	coroutine.resume(coroutine.create(function()
+		 repeat 
+			Swait()
+				GYRO.CFrame = CF(RootPart.Position,Mouse.Hit.p)
+				--[[Any Basic Hand Movement]] RootJoint.C0 = Clerp(RootJoint.C0,ROOTC0 * CF(0, 0, 25 + 0.045 * COS(SINE / 32)) * ANGLES(RAD(55), RAD(-10), RAD(0)) * ANGLES(RAD(0), RAD(0), RAD(0)), 0.15 / Animation_Speed)
+				animatefingers("lerp",
+				{
+				--[[Bottom Index]] CF(0,0,0)*ANGLES(RAD(0), RAD(25 - 10 * COS(SINE/30)), RAD(45 - 15 * COS(SINE/30))),
+				--[[Top Index]] CF(0,0,0)*ANGLES(RAD(-75 - 15 * COS(SINE/30)), RAD(25 - 10 * COS(SINE/30)), RAD(0)),
+				--[[Bottom Middle]] CF(0,0,0)*ANGLES(RAD(0), RAD(10 - 5 * COS(SINE/30)), RAD(45 - 15 * COS(SINE/30))),
+				--[[Top Middle]] CF(0,0,0)*ANGLES(RAD(-75 - 15 * COS(SINE/30)), RAD(10 - 5 * COS(SINE/30)), RAD(0)),
+				--[[Bottom Ring]] CF(0,0,0)*ANGLES(RAD(0), RAD(-10 + 5 * COS(SINE/30)), RAD(45 - 15 * COS(SINE/30))),
+				--[[Top Ring]] CF(0,0,0)*ANGLES(RAD(-75 - 15 * COS(SINE/30)), RAD(-10 + 5 * COS(SINE/30)), RAD(0)),
+				--[[Bottom Pinkie]] CF(0,0,0)*ANGLES(RAD(0), RAD(-25 + 10 * COS(SINE/30)), RAD(45 - 15 * COS(SINE/30))),
+				--[[Top Pinkie]] CF(0,0,0)*ANGLES(RAD(-75 - 15 * COS(SINE/30)), RAD(-25 + 10 * COS(SINE/30)), RAD(0)),
+				--[[Bottom Thumb]] CF(0,0,0)*ANGLES(RAD(10), RAD(15), RAD(0)),
+				--[[Top Thumb]] CF(0,0,0)*ANGLES(RAD(10), RAD(15), RAD(0)),
+				}, .1)	
+		 until KEYHOLD == false
+	end))
+	repeat
+		 Swait()
+		 local HIT,POS = CastProperRay(RightArm.Position, Mouse.Hit.p, 1000, Character)
+		 SpawnTrail(IndexBeamPart.Position,POS)
+		 SpawnTrail(MiddleBeamPart.Position,POS)
+		 SpawnTrail(PinkieBeamPart.Position,POS)
+		 SpawnTrail(RingBeamPart.Position,POS)
+		 SpawnTrail(ThumbBeamPart.Position,POS)	
+		 WACKYEFFECT({
+			Time = 3,
+			EffectType = "Block",
+			Size = VT(15, 15, 15)/1.5,
+			Size2 = VT(60, 60, 60)/1.5,
+			Transparency = 0,
+			Transparency2 = 1,
+			CFrame = CF(POS),
+			MoveToPos = nil,
+			RotationX = math.random(-15,15),
+			RotationY = math.random(-15,15),
+			RotationZ = math.random(-15,15),
+			Material = "Neon",
+			Color = C3(.45,1,.45),
+			SoundID = 0,
+			SoundPitch = 0,
+			SoundVolume = 7,
+			UseBoomerangMath = true,
+			Boomerang = 10,
+			SizeBoomerang = 20
+		})
+			AOETime(POS,35)
+	until KEYHOLD == false
+	LOOPINGBEAMSOUND:remove()
+	GYRO:remove()
+	ATTACK = false
+end
+
+function TheDestroyer()
+	ATTACK = true
+	local HOLD = true
+	local DESTROYER = CreatePart(3, Effects, "Neon", 0, 0, "Olivine", "DESTROYER", VT(0, 0, 0), true)
+	DESTROYER.Shape = "Ball"
+	DESTROYER.Touched:Connect(function(HIT)
+		if HIT.Parent ~= Character and HIT.Parent:FindFirstChildOfClass("Humanoid") then
+			OBLITERATE(HIT.Parent)
+		end
+	end)
+	local THROW = false  
+	CreateSound("306948842",STUFF,5,.8,false)  
+	CreateSound("306948842",STUFF,5,.7,false)  
+	CreateSound("306948842",STUFF,5,.6,false)  
+	CreateSound("306948842",STUFF,5,.5,false)  
+	CreateSound("306948842",STUFF,5,.4,false)  
+	CreateSound("306948842",STUFF,5,.3,false)  
+	CreateSound("489657591",STUFF,5,7,false)
+	coroutine.resume(coroutine.create(function()
+			repeat
+				DESTROYER.CFrame = Torso.CFrame * CF(0, 0, -55)
+				Swait()
+			until THROW == true
+	end))
+	coroutine.resume(coroutine.create(function()
+		for E = 1, 180 do
+			Swait()
+			CameraShake(RootPart.Position,1e9,35,90)
+			WACKYEFFECT({
+				Time = 40,
+				EffectType = "Sphere",
+				Size = VT(5, 5, 5)*2.5,
+				Size2 = VT(0, 0, 250)*2.5,
+				Transparency = 0,
+				Transparency2 = 1,
+				CFrame = DESTROYER.CFrame * ANGLES(RAD(MRANDOM(-360, 360)), RAD(MRANDOM(-360, 360)), RAD(MRANDOM(-360, 360))),
+				MoveToPos = nil,
+				RotationX = math.random(-180,180),
+				RotationY = math.random(-15,15),
+				RotationZ = math.random(-65,65),
+				Material = "Neon",
+				Color = C3(.45,1,.45),
+				SoundID = 0,
+				SoundPitch = .8,
+				SoundVolume = 4,   
+				UseBoomerangMath = true,
+				Boomerang = 25,
+				SizeBoomerang = 50
+			})
+			DESTROYER.Size = DESTROYER.Size + VT(0.5, 0.5, 0.5)
+			local ANGLE = CF(DESTROYER.Position) * ANGLES(RAD(MRANDOM(0, 360)), RAD(MRANDOM(0, 360)), RAD(MRANDOM(0, 360)))
+		end
+	end))
+	for i=0, 5.5, 0.1 / Animation_Speed do
+		Swait()
+		--[[Any Basic Hand Movement]] RootJoint.C0 = Clerp(RootJoint.C0,ROOTC0 * CF(0, 0, 85 + 0.045 * COS(SINE / 32)) * ANGLES(RAD(-80), RAD(-60), RAD(0)) * ANGLES(RAD(0), RAD(0), RAD(0)), 0.15 / Animation_Speed)
+		animatefingers("lerp",
+		{
+		--[[Bottom Index]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(25  - 25 * COS(SINE/30))),
+		--[[Top Index]] CF(0,0,0)*ANGLES(RAD(35  - 25 * COS(SINE/30)), RAD(0), RAD(0)),
+		--[[Bottom Middle]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(25  - 25 * COS(SINE/30))),
+		--[[Top Middle]] CF(0,0,0)*ANGLES(RAD(35  - 25 * COS(SINE/30)), RAD(0), RAD(0)),
+		--[[Bottom Ring]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(25  - 25 * COS(SINE/30))),
+		--[[Top Ring]] CF(0,0,0)*ANGLES(RAD(35  - 25 * COS(SINE/30)), RAD(0), RAD(0)),
+		--[[Bottom Pinkie]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(25  - 25 * COS(SINE/30))),
+		--[[Top Pinkie]] CF(0,0,0)*ANGLES(RAD(35  - 25 * COS(SINE/30)), RAD(0), RAD(0)),
+		--[[Bottom Thumb]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(25  - 25 * COS(SINE/30))),
+		--[[Top Thumb]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(35  - 25 * COS(SINE/30))),
+		}, .1)
+	end
+	local GYRO = IT("BodyGyro", RootPart)
+	GYRO.D = 100
+	GYRO.P = 20000
+	GYRO.MaxTorque = VT(0, 4000000, 0)
+	GYRO.cframe = CF(RootPart.Position, Mouse.Hit.p)
+	HOLD = false
+	for i=0, 1, 0.1 / Animation_Speed do
+		Swait()
+		GYRO.CFrame = CF(RootPart.Position,Mouse.Hit.p)
+		--[[Any Basic Hand Movement]] RootJoint.C0 = Clerp(RootJoint.C0,ROOTC0 * CF(0, 0, 85 + 0.045 * COS(SINE / 32)) * ANGLES(RAD(-80), RAD(-60), RAD(0)) * ANGLES(RAD(0), RAD(0), RAD(0)), 0.15 / Animation_Speed)
+		animatefingers("lerp",
+		{
+		--[[Bottom Index]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(25  - 25 * COS(SINE/30))),
+		--[[Top Index]] CF(0,0,0)*ANGLES(RAD(35  - 25 * COS(SINE/30)), RAD(0), RAD(0)),
+		--[[Bottom Middle]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(25  - 25 * COS(SINE/30))),
+		--[[Top Middle]] CF(0,0,0)*ANGLES(RAD(35  - 25 * COS(SINE/30)), RAD(0), RAD(0)),
+		--[[Bottom Ring]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(25  - 25 * COS(SINE/30))),
+		--[[Top Ring]] CF(0,0,0)*ANGLES(RAD(35  - 25 * COS(SINE/30)), RAD(0), RAD(0)),
+		--[[Bottom Pinkie]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(25  - 25 * COS(SINE/30))),
+		--[[Top Pinkie]] CF(0,0,0)*ANGLES(RAD(35  - 25 * COS(SINE/30)), RAD(0), RAD(0)),
+		--[[Bottom Thumb]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(25  - 25 * COS(SINE/30))),
+		--[[Top Thumb]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(35  - 25 * COS(SINE/30))),
+		}, .1)
+	end
+	CameraShake(DESTROYER.Position,1e9,45,105)
+	CreateSound("533636431",STUFF,10,1,false)
+	CreateSound("533636431",STUFF,10,.9,false)
+	CreateSound("533636431",STUFF,10,.8,false)
+	for i=0, .5, 0.1 / Animation_Speed do
+		Swait()
+		GYRO.CFrame = CF(RootPart.Position,Mouse.Hit.p)
+		--[[Any Basic Hand Movement]] RootJoint.C0 = Clerp(RootJoint.C0,ROOTC0 * CF(0, 0, 85 + 0.045 * COS(SINE / 32)) * ANGLES(RAD(120), RAD(40), RAD(0)) * ANGLES(RAD(0), RAD(0), RAD(0)), 0.15 / Animation_Speed)
+		animatefingers("lerp",
+		{
+		--[[Bottom Index]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(25)),
+		--[[Top Index]] CF(0,0,0)*ANGLES(RAD(35), RAD(0), RAD(0)),
+		--[[Bottom Middle]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(25)),
+		--[[Top Middle]] CF(0,0,0)*ANGLES(RAD(35), RAD(0), RAD(0)),
+		--[[Bottom Ring]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(25)),
+		--[[Top Ring]] CF(0,0,0)*ANGLES(RAD(35), RAD(0), RAD(0)),
+		--[[Bottom Pinkie]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(25)),
+		--[[Top Pinkie]] CF(0,0,0)*ANGLES(RAD(35), RAD(0), RAD(0)),
+		--[[Bottom Thumb]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(25)),
+		--[[Top Thumb]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(35)),
+		}, .1)
+	end
+	DESTROYER.CFrame = CF(Torso.Position, Mouse.Hit.p)
+	THROW = true
+	GYRO:remove()
+	coroutine.resume(coroutine.create(function()
+		for i = 1, 1000 do
+			Swait()
+			local HIT,POS,NORMAL = Raycast(DESTROYER.Position,DESTROYER.CFrame.lookVector,4,Character)
+			if HIT then
+				CameraShake(DESTROYER.Position,1e9,50,125)
+				CreateSound("541452480",STUFF,5,1,false)
+				CreateSound("1606720250",STUFF,10,1,false)
+				CreateSound("1606720250",STUFF,10,.9,false)
+				CreateSound("1606720250",STUFF,10,.8,false)
+				CreateSound("1606719431",STUFF,10,1,false)
+				CreateSound("1606719431",STUFF,10,.9,false)
+				CreateSound("1606719431",STUFF,10,.8,false)
+				CreateSound("421328847",STUFF,10,1,false)
+				CreateSound("421328847",STUFF,10,.9,false)
+				CreateSound("421328847",STUFF,10,.8,false)
+				CreateSound("1606720250",STUFF,10,1,false)
+				CreateSound("1606720250",STUFF,10,.9,false)
+				CreateSound("1606720250",STUFF,10,.8,false)
+				CreateSound("1606719431",STUFF,10,1,false)
+				CreateSound("1606719431",STUFF,10,.9,false)
+				CreateSound("1606719431",STUFF,10,.8,false)
+				CreateSound("421328847",STUFF,10,1,false)
+				CreateSound("421328847",STUFF,10,.9,false)
+				CreateSound("421328847",STUFF,10,.8,false)
+				coroutine.resume(coroutine.create(function()
+					for i = 1,250 do
+						Swait()
+						WACKYEFFECT({EffectType = "Wave", Size = VT(0,5,0), Size2 = VT(i*12,5,i*12), Transparency = 0.6, Transparency2 = 1, CFrame = CF(POS) * ANGLES(RAD(0), RAD(MRANDOM(0,360)), RAD(MRANDOM(-5,5))), MoveToPos = nil, RotationX = 0.1, RotationY = 1, RotationZ = -0.1, Material = "Slate", Color = C3(.45,1,.45), SoundID = 0, SoundPitch = MRANDOM(5,15)/10, SoundVolume = 3, UseBoomerangMath = false, Boomerang = 0, SizeBoomerang = 0})
+						WACKYEFFECT({EffectType = "Sphere", Size = VT(0,5,0), Size2 = VT(i*12,5,i*12), Transparency = 0.6, Transparency2 = 1, CFrame = CF(POS) * ANGLES(RAD(0), RAD(MRANDOM(0,360)), RAD(MRANDOM(-5,5))), MoveToPos = nil, RotationX = 0.1, RotationY = 1, RotationZ = -0.1, Material = "Neon", Color = C3(.45,1,.45), SoundID = 0, SoundPitch = MRANDOM(5,15)/10, SoundVolume = 3, UseBoomerangMath = false, Boomerang = 0, SizeBoomerang = 0})
+						WACKYEFFECT({EffectType = "Slash", Size = VT(0,5,0), Size2 = VT(i*12,5,i*12), Transparency = 0.6, Transparency2 = 1, CFrame = CF(POS) * ANGLES(RAD(0), RAD(MRANDOM(0,360)), RAD(MRANDOM(-5,5))), MoveToPos = nil, RotationX = 0.1, RotationY = 1, RotationZ = -0.1, Material = "Neon", Color = C3(.45,1,.45), SoundID = 0, SoundPitch = MRANDOM(5,15)/10, SoundVolume = 3, UseBoomerangMath = false, Boomerang = 0, SizeBoomerang = 0})
+					end
+				end))
+				AOETime2(POS,15e15)
+				DESTROYER:remove()
+				break		
+			else
+				DESTROYER.CFrame = Clerp(DESTROYER.CFrame,CF(DESTROYER.Position,Mouse.Hit.p),0.001) * CF(0,0,-2) 
+				WACKYEFFECT({
+					Time = 40,
+					EffectType = "Sphere",
+					Size = VT(5, 5, 5)*2.5,
+					Size2 = VT(0, 0, 250)*2.5,
+					Transparency = 0,
+					Transparency2 = 1,
+					CFrame = DESTROYER.CFrame * ANGLES(RAD(MRANDOM(-360, 360)), RAD(MRANDOM(-360, 360)), RAD(MRANDOM(-360, 360))),
+					MoveToPos = nil,
+					RotationX = math.random(-180,180),
+					RotationY = math.random(-15,15),
+					RotationZ = math.random(-65,65),
+					Material = "Neon",
+					Color = C3(.45,1,.45),
+					SoundID = 0,
+					SoundPitch = .8,
+					SoundVolume = 4,   
+					UseBoomerangMath = true,
+					Boomerang = 25,
+					SizeBoomerang = 50
+				})
+			end
+		end 
+	end))                 
+	ATTACK = false
+end
+
+--><Key Inputs
+
+function MouseDown(Mouse)       
+	KEYHOLD = true
+	if ATTACK == false then
+
+	end           
+end
+
+function MouseUp(Mouse)
+HOLD = false
+end
+
+function KeyDown(Key)
+	KEYHOLD = true
+	if Key == "z" and ATTACK == false then
+		FingerGun()
+	end
+	if Key == "x" and ATTACK == false then
+		TheDestroyer()
+	end
+	if Key == "c" and ATTACK == false then
+		TimeDispeller()
+	end
+	if Key == "v" and ATTACK == false then
+		PunishingSmash()
+	end
+	if Key == "b" and ATTACK == false then
+		FingerBeams()
+	end
+	if Key == "t" and ATTACK == false then
+		Taunts()
+	end
+	if Key == "f" and ATTACK == false then
+		BirdFlip()
+	end
+	if Key == "m" and ATTACK == false then
+		if Song == 2803669496 then
+			Song = 0
+			print("Song Off")
+		elseif Song == 0 then
+			Song = 2803669496
+			print("Song On")
+		end	             				
+	end
+end	
+
+function KeyUp(Key)
+	KEYHOLD = false
+end
+
+	Mouse.Button1Down:connect(function(NEWKEY)
+		MouseDown(NEWKEY)
+	end)
+	Mouse.Button1Up:connect(function(NEWKEY)
+		MouseUp(NEWKEY)
+	end)
+	Mouse.KeyDown:connect(function(NEWKEY)
+		KeyDown(NEWKEY)
+	end)
+	Mouse.KeyUp:connect(function(NEWKEY)
+		KeyUp(NEWKEY)
+	end) 
+
+--><
+function unanchor()
+	for _, c in pairs(Character:GetChildren()) do
+		if c:IsA("BasePart") and c ~= RootPart then
+			c.Anchored = false
+		end
+	end
+	if UNANCHOR == true then
+		RootPart.Anchored = false
+	else
+		RootPart.Anchored = true
+	end
+end
+
+------------------------------------------------------------------------------
+Humanoid.Changed:connect(function(Jump)
+	if Jump == "Jump" and (Disable_Jump == true) then
+		Humanoid.Jump = false
+	end
+end)
+
+Humanoid.HipHeight = 25
+Humanoid.JumpPower = 0
+Humanoid.WalkSpeed = 100
+local Field = Instance.new("ForceField", game.Players.LocalPlayer.Character)
+Field.Visible = false
+Character.Parent = workspace
+
+while true do
+	Swait()
+	script.Parent = WEAPONGUI
+	ANIMATE.Parent = nil
+	ANIMATOR.Parent = nil
+	for _,v in next, Humanoid:GetPlayingAnimationTracks() do
+	    v:Stop();
+	end
+	SINE = SINE + CHANGE*2
+	local TORSOVELOCITY = (RootPart.Velocity * VT(1, 0, 1)).magnitude
+	local TORSOVERTICALVELOCITY = RootPart.Velocity.y
+	local HITFLOOR,HITPOS,NORMAL = Raycast(RootPart.Position, (CF(RootPart.Position, RootPart.Position + VT(0, -1, 0))).lookVector, 4+Humanoid.HipHeight, Character)
+	local TiltVelocity = CF(RootPart.CFrame:vectorToObjectSpace(RootPart.Velocity/1.6))
+	local WALKSPEEDVALUE = 12 / (Humanoid.WalkSpeed / 16)
+	if TORSOVELOCITY < 1 and HITFLOOR ~= nil then
+		ANIM = "Idle"
+		if ATTACK == false then
+			local Alpha = .1
+			--[[Any Basic Hand Movement]] RootJoint.C0 = Clerp(RootJoint.C0,ROOTC0 * CF(0, 0, 0 + 3.5 * COS(SINE / 44)) * ANGLES(RAD(0 - 5.5 * SIN(SINE / 45)), RAD(-10), RAD(0)) * ANGLES(RAD(0), RAD(0), RAD(0)), 0.15 / Animation_Speed)
+			animatefingers("lerp",
+			{
+			--[[Bottom Index]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(15 - 25 * COS(SINE/30))),
+			--[[Top Index]] CF(0,0,0)*ANGLES(RAD(15 - 25 * COS(SINE/30)), RAD(0), RAD(0)),
+			--[[Bottom Middle]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(15 - 25 * COS(SINE/30))),
+			--[[Top Middle]] CF(0,0,0)*ANGLES(RAD(15 - 25 * COS(SINE/30)), RAD(0), RAD(0)),
+			--[[Bottom Ring]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(15 - 25 * COS(SINE/30))),
+			--[[Top Ring]] CF(0,0,0)*ANGLES(RAD(15 - 25 * COS(SINE/30)), RAD(0), RAD(0)),
+			--[[Bottom Pinkie]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(15 - 25 * COS(SINE/30))),
+			--[[Top Pinkie]] CF(0,0,0)*ANGLES(RAD(15 - 25 * COS(SINE/30)), RAD(0), RAD(0)),
+			--[[Bottom Thumb]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(15 - 25 * COS(SINE/30))),
+			--[[Top Thumb]] CF(0,0,0)*ANGLES(RAD(0), RAD(0), RAD(15 - 25 * COS(SINE/30))),
+			}, Alpha)
+		end
+	elseif TORSOVELOCITY > 1 and HITFLOOR ~= nil then
+		ANIM = "Walk"
+		if ATTACK == false then
+			local Alpha = .1
+			--[[Any Basic Hand Movement]] RootJoint.C0 = Clerp(RootJoint.C0,ROOTC0 * CF(0, 0, 0 + 3.5 * COS(SINE / 44)) * ANGLES(RAD(45 + 6.5 * SIN(SINE / 45)), RAD(-10), RAD(0)) * ANGLES(RAD(0), RAD(0), RAD(0)), 0.15 / Animation_Speed)
+			animatefingers("lerp",
+			{
+			--[[Bottom Index]] CF(0,0,0)*ANGLES(RAD(10), RAD(10), RAD(0)),
+			--[[Top Index]] CF(0,0,0)*ANGLES(RAD(10), RAD(10), RAD(0)),
+			--[[Bottom Middle]] CF(0,0,0)*ANGLES(RAD(5), RAD(5), RAD(0)),
+			--[[Top Middle]] CF(0,0,0)*ANGLES(RAD(5), RAD(5), RAD(0)),
+			--[[Bottom Ring]] CF(0,0,0)*ANGLES(RAD(-5), RAD(-5), RAD(0)),
+			--[[Top Ring]] CF(0,0,0)*ANGLES(RAD(-5), RAD(-5), RAD(0)),
+			--[[Bottom Pinkie]] CF(0,0,0)*ANGLES(RAD(-10), RAD(-10), RAD(0)),
+			--[[Top Pinkie]] CF(0,0,0)*ANGLES(RAD(-10), RAD(-10), RAD(0)),
+			--[[Bottom Thumb]] CF(0,0,0)*ANGLES(RAD(10), RAD(15), RAD(0)),
+			--[[Top Thumb]] CF(0,0,0)*ANGLES(RAD(10), RAD(15), RAD(0)),
+			}, Alpha)
+		end
+	end                          
+	unanchor() 
+	Head.CanCollide = false
+	Torso.CanCollide = false
+	RightArm.CanCollide = false
+	LeftArm.CanCollide = false
+	RightLeg.CanCollide = false
+	LeftLeg.CanCollide = false
+	Humanoid.WalkSpeed = 100
+	Humanoid.HipHeight = 25
+	Humanoid.JumpPower = 0
+	Humanoid:SetStateEnabled("Dead",false)
+	Humanoid:SetStateEnabled(Enum.HumanoidStateType.Dead, false)
+	Humanoid:SetStateEnabled("GettingUp",true)
+	Humanoid:SetStateEnabled(Enum.HumanoidStateType.GettingUp, true)
+	Humanoid:SetStateEnabled("Ragdoll",false)
+	Humanoid:SetStateEnabled(Enum.HumanoidStateType.Ragdoll, false)
+	Humanoid:SetStateEnabled("FallingDown",false)
+	Humanoid:SetStateEnabled(Enum.HumanoidStateType.FallingDown, false)
+	Humanoid:SetStateEnabled("Seated",false)
+	Humanoid:SetStateEnabled(Enum.HumanoidStateType.Seated, false)
+	Humanoid:SetStateEnabled("PlatformStanding",false)
+	Humanoid:SetStateEnabled(Enum.HumanoidStateType.PlatformStanding, false)
+	Humanoid.MaxHealth = 1e9999999
+	Humanoid.Health = 1e999999999 
+	Humanoid.Name = "Being"
+	if game.ReplicatedFirst:FindFirstChildOfClass("Humanoid") == nil then
+		Humanoid = IT("Humanoid",game.ReplicatedFirst)
+        Humanoid.Name = "Being"
+        Humanoid.HipHeight = 0
+	end
+	if Rooted == false then
+		Disable_Jump = false
+		Humanoid.WalkSpeed = Speed
+	elseif Rooted == true then
+		Disable_Jump = true
+		Humanoid.WalkSpeed = 0
+	end 	
+	Character.Parent = workspace
+	if game.ReplicatedFirst:FindFirstChildOfClass("Humanoid") == nil then
+		Humanoid = IT("Humanoid",game.ReplicatedFirst)
+        Humanoid.Name = "Being"
+        Humanoid.HipHeight = 0
+	end
+	if Character:FindFirstChildOfClass("Accessory") then
+		Character:FindFirstChildOfClass("Accessory"):remove()
+	elseif Character:FindFirstChildOfClass("Hair") then
+		Character:FindFirstChildOfClass("Hair"):remove()
+	end
+	if Character:FindFirstChildOfClass("Accessory") then
+		Character:FindFirstChildOfClass("Accessory"):remove()
+	elseif Character:FindFirstChildOfClass("Hat") then
+		Character:FindFirstChildOfClass("Hat"):remove()
+	end
+	if Player.Name == "InfiniteOneWithdank" then
+		for _, c in pairs(Character:GetChildren()) do
+			if c and c.Parent and c.ClassName == "ShirtGraphic" then
+				c:Destroy()
+			end
+		end	
+	end	
+	Musika.SoundId = "rbxassetid://" .. Song
+	Musika.Looped = true
+	Musika.Pitch = Pitch
+	Musika.Volume = Volu
+	Musika.Playing = true
+	Musika.EmitterSize = 35
+	if Musika.Parent ~= RootPart then
+		print("Fixing music")
+		Musika = IT("Sound", RootPart)
+		Musika.SoundId = "rbxassetid://" .. Song
+		Musika.Looped = true
+		Musika.Pitch = Pitch
+		Musika.Volume = Volu 
+		Musika.Playing = true
+		Musika.EmitterSize = 45
+		Musika.TimePosition = TSTP
+		FIXING = true
+	elseif FIXING == false then
+		TSTP = Musika.TimePosition
+	else
+		FIXING = false
+	end	
+end
