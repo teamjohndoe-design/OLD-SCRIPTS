@@ -22,7 +22,7 @@ Duration = 15;
 Object.Parent = game.Workspace
 script = Object.ASHA
 
-print("Created By InfiniteOneWithdank, Shackluster/PityPolygon Made The Original Base Of This Script")
+print("Created By John doe on discord Made The Original Base Of This Script")
 
 wait(2)
 Player = game.Players.LocalPlayer
