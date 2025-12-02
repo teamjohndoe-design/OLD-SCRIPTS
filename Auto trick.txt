@@ -1,0 +1,205 @@
+
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+local RunService = game:GetService("RunService")
+local RemoteEvent = ReplicatedStorage.Modules.Network.RemoteEvent
+local UIS = game:GetService("UserInputService")
+local device = "Mobile"
+
+local function getBehaviorFolder()
+    return ReplicatedStorage:WaitForChild("Assets")
+        :WaitForChild("Survivors")
+        :WaitForChild("Veeronica")
+        :WaitForChild("Behavior")
+end
+
+local function getSprintingButton()
+    return player.PlayerGui:WaitForChild("MainUI"):WaitForChild("SprintingButton")
+end
+
+local behaviorFolder = getBehaviorFolder()
+
+-- safe helper
+local function safeConnectPropertyChanged(instance, prop, fn)
+    local ok, signal = pcall(function() return instance:GetPropertyChangedSignal(prop) end)
+    if ok and signal then
+        return signal:Connect(fn)
+    end
+    return nil
+end
+
+-- Manager state
+local enabled = true
+local activeMonitors = {} -- highlight -> cleanup function
+local descendantAddedConn = nil
+
+-- Monitor a single Highlight. Returns cleanup function (also stored into activeMonitors)
+local function monitorHighlight(h)
+    if not h or activeMonitors[h] then return end
+
+    local connections = {}
+    local prevState = false
+
+    local function cleanup()
+        for _, conn in ipairs(connections) do
+            if conn and conn.Connected then
+                conn:Disconnect()
+            end
+        end
+        activeMonitors[h] = nil
+    end
+
+    local function adorneeIsPlayerCharacter(h)
+        if not h then return false end
+        local adornee = h.Adornee
+        local char = player.Character
+        if not adornee or not char then return false end
+        if adornee == char then return true end
+        if adornee:IsDescendantOf(char) then return true end
+        return false
+    end
+
+    local function onChanged()
+        -- if disabled, skip doing actions (cleanup will be called by stopManager)
+        if not enabled then return end
+        if not h or not h.Parent then
+            cleanup()
+            return
+        end
+
+        local currState = adorneeIsPlayerCharacter(h)
+        if prevState ~= currState then
+            if currState then
+                if device == "Mobile" then
+                    local ok, btn = pcall(getSprintingButton)
+                    if ok and btn then
+                        -- try to call any MouseButton1Down connections (original behavior)
+                        for i, v in pairs(getconnections(btn.MouseButton1Down)) do
+                            pcall(function() v:Fire() end)
+                            -- original had v:Function(), keep safe
+                            pcall(function() if v.Function then v:Function() end end)
+                        end
+                    end
+                end
+            end
+        end
+        prevState = currState
+    end
+
+    local c = safeConnectPropertyChanged(h, "Adornee", onChanged)
+    if c then table.insert(connections, c) end
+
+    table.insert(connections, h.AncestryChanged:Connect(function(_, parent)
+        if not parent then
+            cleanup()
+        else
+            onChanged()
+        end
+    end))
+
+    table.insert(connections, player.CharacterAdded:Connect(onChanged))
+    table.insert(connections, player.CharacterRemoving:Connect(onChanged))
+
+    -- store cleanup so manager can stop monitors later
+    activeMonitors[h] = cleanup
+
+    -- initial check
+    task.spawn(onChanged)
+end
+
+-- Start watching all highlights and listen for new ones
+local function startManager()
+    if descendantAddedConn then return end
+    -- watch existing
+    for _, desc in ipairs(behaviorFolder:GetDescendants()) do
+        if desc:IsA("Highlight") then
+            monitorHighlight(desc)
+        end
+    end
+    -- listen for new highlights
+    descendantAddedConn = behaviorFolder.DescendantAdded:Connect(function(child)
+        if child:IsA("Highlight") then
+            monitorHighlight(child)
+        end
+    end)
+end
+
+-- Stop watching and cleanup everything
+local function stopManager()
+    if descendantAddedConn and descendantAddedConn.Connected then
+        descendantAddedConn:Disconnect()
+    end
+    descendantAddedConn = nil
+
+    -- copy keys to avoid mutation during iteration
+    local cleans = {}
+    for h, cleanup in pairs(activeMonitors) do
+        if type(cleanup) == "function" then
+            table.insert(cleans, cleanup)
+        end
+    end
+    for _, fn in ipairs(cleans) do
+        pcall(fn)
+    end
+    activeMonitors = {}
+end
+
+-- Toggle
+local function setEnabled(v)
+    if enabled == v then return end
+    enabled = v
+    if enabled then
+        startManager()
+    else
+        stopManager()
+    end
+end
+
+-- Create a tiny toggle GUI in PlayerGui
+local function createToggleGui()
+    local pg = player:WaitForChild("PlayerGui")
+    -- avoid creating multiple copies
+    if pg:FindFirstChild("AutoSprintToggleGui") then
+        return pg.AutoSprintToggleGui
+    end
+
+    local screenGui = Instance.new("ScreenGui")
+    screenGui.Name = "AutoSprintToggleGui"
+    screenGui.ResetOnSpawn = false
+    screenGui.Parent = pg
+
+    local toggleButton = Instance.new("TextButton")
+    toggleButton.Size = UDim2.new(0, 150, 0, 50)
+    toggleButton.Position = UDim2.new(0, 10, 0, 10) -- top-left corner
+    toggleButton.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+    toggleButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+    toggleButton.Font = Enum.Font.SourceSansBold
+    toggleButton.TextSize = 20
+    toggleButton.Text = "Auto Trick = OFF"
+    toggleButton.TextScaled = true
+    toggleButton.Parent = screenGui
+
+    -- click toggles
+    toggleButton.MouseButton1Click:Connect(function()
+        setEnabled(not enabled)
+        toggleButton.Text = enabled and "Auto Trick = ON" or "Auto Trick = OFF"
+    end)
+
+    -- simple drag support
+
+    return screenGui
+end
+
+-- initialize
+createToggleGui()
+if enabled then
+    startManager()
+end
+
+-- ensure toggle GUI persists across character respawn
+player.CharacterAdded:Connect(function()
+    -- small delay to ensure PlayerGui elements (like MainUI) are available
+    task.wait(0.2)
+    createToggleGui()
+end)
