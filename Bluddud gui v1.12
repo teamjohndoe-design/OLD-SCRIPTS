@@ -1,0 +1,12 @@
+--[[ keys:"febypassisreal123",
+"thisisntskidded",
+"teambluudud",
+"golearnscriptingyoustupidskid",
+"iswearimnotaskid",
+"BluududJrScriptHubGuiSSByBluududJR",
+"VGHA-AFRA-FDSFA-FDAE-FDSA-6761-A"
+try every key. ( they are random ) ]] 
+if loader == true then
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/teamjohndoe-design/OLD-SCRIPTS/refs/heads/main/SETTINGS%20Bluddud%20gui"))() -- take the server discord link
+end
+-- .gg/4wGpMHdXYa
