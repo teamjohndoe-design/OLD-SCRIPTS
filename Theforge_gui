@@ -1,0 +1,3 @@
+getgenv().mobileMode = false -- set true if ur on mobile device
+repeat wait() until game:IsLoaded()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Just-me-design/SCRIPTS/refs/heads/main/Gui_theforge"))()
