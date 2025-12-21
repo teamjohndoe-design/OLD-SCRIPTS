@@ -1,0 +1,66 @@
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+
+local BEAM_NAME = "ForcedBlueBeam"
+local BEAM_COLOR = Color3.fromRGB(0, 145, 250)
+local BEAM_LENGTH = 50
+
+local function ensureBlueBeam(ponto: BasePart)
+	local attachment0 = ponto:FindFirstChild("BeamAttachment0")
+	if not attachment0 then
+		attachment0 = Instance.new("Attachment")
+		attachment0.Name = "BeamAttachment0"
+		attachment0.Position = Vector3.zero
+		attachment0.Parent = ponto
+	end
+
+	local attachment1 = ponto:FindFirstChild("BeamAttachment1")
+	if not attachment1 then
+		attachment1 = Instance.new("Attachment")
+		attachment1.Name = "BeamAttachment1"
+		attachment1.Parent = ponto
+	end
+
+	attachment1.Position = Vector3.new(0, 0, BEAM_LENGTH)
+
+	local beam = ponto:FindFirstChild(BEAM_NAME)
+	if not beam then
+		beam = Instance.new("Beam")
+		beam.Name = BEAM_NAME
+		beam.Attachment0 = attachment0
+		beam.Attachment1 = attachment1
+		beam.Width0 = 0.2
+		beam.Width1 = 0.2
+		beam.FaceCamera = true
+		beam.Parent = ponto
+	end
+
+	beam.Enabled = true
+	beam.Color = ColorSequence.new(BEAM_COLOR)
+	beam.Transparency = NumberSequence.new(0)
+	beam.LightEmission = 1
+	beam.LightInfluence = 0
+end
+
+local function enforceVisibility(character: Model)
+	for _, descendant in character:GetDescendants() do
+		if descendant:IsA("BasePart") then
+			if descendant.Name ~= "HumanoidRootPart" and descendant.Name ~= "hitbox" then
+				descendant.Transparency = 0
+			end
+
+			if descendant.Name == "ponto" then
+				ensureBlueBeam(descendant)
+			end
+		end
+	end
+end
+
+RunService.Heartbeat:Connect(function()
+	for _, player in Players:GetPlayers() do
+		local character = player.Character
+		if character then
+			enforceVisibility(character)
+		end
+	end
+end)
